@@ -40,6 +40,11 @@ img {
 	padding: 100px;
 }
 
+.bar{
+  padding-top: : 10px;
+  padding-bottom: 10px;
+}
+
 .btn-block {
 	background-color: rgb(79, 46, 134);
 	color: white;
