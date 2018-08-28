@@ -184,7 +184,6 @@ span.socialbutton:hover {
 	/* position: absolute; */
 	width: 250px;
 	height: 250px;
-	margin-left: 600px;
 	margin-top: 50px;
 	width: auto;
 	max-width: 100%;
@@ -472,7 +471,6 @@ span.image-layer {
 		text-align: center;
 	}
 }
-
 
 @media only screen and (min-width: 400px) and (max-width: 450px) {
 	#modal1 .modal {
