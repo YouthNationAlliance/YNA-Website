@@ -1,3 +1,7 @@
+body{
+  margin: 0px;
+}
+
 .jumbotron {
   background: #532F8C;
   color: white;
@@ -25,3 +29,28 @@
     .jumbotron .lang-logo img {
       max-width: 100%; }
 
+.navbar {
+  /*background-color: red;*/
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navOption {
+
+}
+
+.navText {
+  color: white;
+}
+
+#navIcon {
+
+}
+
+#purple{
+  background-color: purple;
+}
