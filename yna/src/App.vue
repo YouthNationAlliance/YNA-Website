@@ -22,17 +22,20 @@
 
     <v-content>
       <Connect/>
+      <Login/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import Connect from './components/Connect'
+import Login from './components/Login'
 
 export default {
   name: 'App',
   components: {
-    Connect
+    Connect,
+    Login
   },
   data () {
     return {
