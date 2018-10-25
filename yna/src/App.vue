@@ -38,6 +38,9 @@ export default {
     return {
       //
     }
+  },
+  mounted: function() {
+    console.log('lol');
   }
 }
 </script>
