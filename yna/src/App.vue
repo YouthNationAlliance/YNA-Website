@@ -21,8 +21,9 @@
     </v-toolbar>
 
     <v-content>
-      <Connect/>
-      <Login/>
+      <!--<Connect/>
+      <Login/>-->
+      <Setup/>
     </v-content>
   </v-app>
 </template>
@@ -30,12 +31,14 @@
 <script>
 import Connect from './components/Connect'
 import Login from './components/Login'
+import Setup from './components/Setup'
 
 export default {
   name: 'App',
   components: {
-    Connect,
-    Login
+    //Connect,
+    //Login
+    Setup
   },
   data () {
     return {
@@ -43,7 +46,7 @@ export default {
     }
   },
   mounted: function() {
-    console.log('lol');
+  //
   }
 }
 </script>
