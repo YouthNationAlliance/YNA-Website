@@ -21,8 +21,8 @@
     </v-toolbar>
 
     <v-content>
-      <!--<Connect/>
-      <Login/>-->
+      <Connect/>
+      <Login/>
       <Setup/>
     </v-content>
   </v-app>
@@ -32,17 +32,21 @@
 import Connect from './components/Connect'
 import Login from './components/Login'
 import Setup from './components/Setup'
+import Calendar from './components/Calendar'
+import Maps from './components/Maps'
 
 export default {
   name: 'App',
   components: {
-    //Connect,
-    //Login
-    Setup
+    Connect,
+    Login,
+    Setup,
+    Calendar,
+    Maps
   },
   data () {
     return {
-      //
+      // Fill this stuff out later
     }
   },
   mounted: function() {

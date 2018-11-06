@@ -83,19 +83,19 @@
         dialog: false,
         items: [
          {
-           avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+           avatar: 'https://media.licdn.com/dms/image/C4D0BAQEr34FLB9AeKQ/company-logo_100_100/0?e=1545264000&v=beta&t=z0RTexBgTZYF7IzRxCUhAi5oGMzqCimcOzNv86pq1as',
            title: 'Visit us online',
            subtitle: "www.ynalliance.ca"
          },
          { divider: true, inset: true },
          {
-           avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+           avatar: 'http://www.odedwagen.com/wp-content/uploads/2012/04/facebook-logo-png-transparent-background.png',
            title: 'Facebook',
            subtitle: "@teamyna"
          },
          { divider: true, inset: true },
          {
-           avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+           avatar: 'https://diylogodesigns.com/wp-content/uploads/2016/05/instagram-Logo-PNG-Transparent-Background-download-768x768.png',
            title: 'Instagram',
            subtitle: "@teamyna"
          }
