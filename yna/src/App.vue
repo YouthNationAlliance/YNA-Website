@@ -21,32 +21,59 @@
     </v-toolbar>
 
     <v-content>
+      <h1 v-if="loggedin">Logged in!</h1>
+      <Login v-else/>
       <!--<Connect/>
-      <Login/>-->
       <Setup/>
+      -->
+      <v-btn color="success">Success</v-btn>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Connect from './components/Connect'
-import Login from './components/Login'
-import Setup from './components/Setup'
+  import Connect from './components/Connect'
+  import Login from './components/Login'
+  import Setup from './components/Setup'
+  import io from 'socket.io-client'
 
-export default {
-  name: 'App',
-  components: {
-    //Connect,
-    //Login
-    Setup
-  },
-  data () {
-    return {
-      //
+  export default {
+    name: 'App',
+    components: {
+      //Connect,
+      Login
+      //Setup
+    },
+    data () {
+      return {
+        loggedin: false,
+        isConnected: false,
+        socketMessage: '',
+      }
+    },
+    mounted: function() {
+    },
+    sockets: {
+      connect() {
+        // Fired when the socket connects.
+        this.isConnected = true;
+      },
+
+      disconnect() {
+        this.isConnected = false;
+      }
+    },
+    methods: {
+      login(){
+        this.$socket.emit('pingServer', 'PING!')
+      },
+      logout(){
+      },
+      signup(){
+      }
+    },
+    beforeMount() {
+      this.login()
     }
-  },
-  mounted: function() {
-  //
   }
-}
 </script>
