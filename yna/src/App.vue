@@ -18,6 +18,7 @@
       >
         <span class="mr-2">Login</span>
       </v-btn>
+
     </v-toolbar>
 
     <v-content>
@@ -25,6 +26,7 @@
       <Login/>
       <Setup/>
     </v-content>
+    <Dashboard/>
   </v-app>
 </template>
 
@@ -34,6 +36,8 @@ import Login from './components/Login'
 import Setup from './components/Setup'
 import Calendar from './components/Calendar'
 import Maps from './components/Maps'
+import Dashboard from './components/Dashboard'
+import Qualifications from './components/Qualifications'
 
 export default {
   name: 'App',
@@ -42,7 +46,9 @@ export default {
     Login,
     Setup,
     Calendar,
-    Maps
+    Maps,
+    Qualifications,
+    Dashboard
   },
   data () {
     return {
