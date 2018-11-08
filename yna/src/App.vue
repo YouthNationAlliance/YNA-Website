@@ -60,9 +60,9 @@
     </v-content>
     <Dashboard/>
     <!-- <Qualifications/> -->
-    <Calendar/>
     <!-- <Maps/> -->
     <Register/>
+    <!-- <Calendar/> -->
   </v-app>
 </template>
 
@@ -86,7 +86,7 @@ export default {
     Maps,
     Register,
     Qualifications,
-    Dashboard
+    Dashboard,
   },
   data () {
     return {

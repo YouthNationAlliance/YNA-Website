@@ -1,9 +1,8 @@
 <template>
-  <h1>Register</h1>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
-        <h1>Join us here.</h1>
+        <h1>Register</h1>
         <v-form v-model="valid" align-center justify-center>
           <v-text-field
             v-model="email"
@@ -22,7 +21,7 @@
             counter
             @click:append="show1 = !show1"
           ></v-text-field>
-          // <v-btn @click="login">Login</v-btn>
+          <v-btn @click="login">Login</v-btn>
           <v-btn @click="signup">Signup</v-btn>
         </v-form>
       </v-flex>
