@@ -23,7 +23,7 @@
 
     <v-content>
       <Connect/>
-      <Login/>
+      <!--<Login/>-->
       <Setup/>
     </v-content>
     <Dashboard/>
