@@ -15,18 +15,55 @@
       </v-btn>
       <v-btn
         flat
+        href=""
       >
-        <span class="mr-2">Login</span>
+        <span class="mr-2">Volunteer Opportunities</span>
       </v-btn>
 
+      <div class="text-xs-center">
+        <v-menu offset-y>
+        <v-btn
+            slot="activator"
+            flat
+          >
+            Profile
+          </v-btn>
+          <v-list>
+            <v-list-tile
+              v-for="(item, index) in items"
+              :key="index"
+              @click=""
+            >
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </div>
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Maps</span>
+      </v-btn>
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Calendar</span>
+      </v-btn>
     </v-toolbar>
 
     <v-content>
       <Connect/>
       <!--<Login/>-->
       <Setup/>
+      <Login/>
     </v-content>
     <Dashboard/>
+    <!-- <Qualifications/> -->
+    <!-- <Maps/> -->
+    <Register/>
+    <!-- <Calendar/> -->
   </v-app>
 </template>
 
@@ -36,6 +73,7 @@ import Login from './components/Login'
 import Setup from './components/Setup'
 import Calendar from './components/Calendar'
 import Maps from './components/Maps'
+import Register from './components/Register'
 import Dashboard from './components/Dashboard'
 import Qualifications from './components/Qualifications'
 
@@ -47,12 +85,18 @@ export default {
     Setup,
     Calendar,
     Maps,
+    Register,
     Qualifications,
-    Dashboard
+    Dashboard,
   },
   data () {
     return {
-      // Fill this stuff out later
+      items: [
+      { title: 'Login'},
+      { title: 'Register' },
+      { title: 'Account Details'},
+      { title: 'Account Settings'}
+      ]
     }
   },
   mounted: function() {
