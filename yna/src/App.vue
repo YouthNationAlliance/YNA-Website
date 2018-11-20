@@ -54,6 +54,7 @@
     </v-toolbar>
 
     <v-content>
+      <!-- <Calendar/> -->
       <Connect/>
       <Setup/>
       <Login/>
@@ -62,7 +63,6 @@
     <!-- <Qualifications/> -->
     <!-- <Maps/> -->
     <Register/>
-    <!-- <Calendar/> -->
   </v-app>
 </template>
 
@@ -86,7 +86,7 @@ export default {
     Maps,
     Register,
     Qualifications,
-    Dashboard,
+    Dashboard
   },
   data () {
     return {
