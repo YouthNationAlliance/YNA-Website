@@ -56,6 +56,7 @@
     <v-content>
       <!-- <Calendar/> -->
       <Connect/>
+      <!--<Login/>-->
       <Setup/>
       <Login/>
     </v-content>
