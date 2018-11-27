@@ -26,6 +26,9 @@ express()
   .use(serveStatic(__dirname + "/yna/dist"))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+
+/*
+This is still testing stuff...
 //Client stuff
 var connectCounter = 0
 var clients = io.sockets.clients();
@@ -55,3 +58,4 @@ io.clients((error, clients) => {
   if (error) throw error;
   console.log(clients); // => [6em3d4TJP8Et9EMNAAAA, G5p55dHhGgUnLUctAAAB]
 });
+*/
