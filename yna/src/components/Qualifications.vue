@@ -1,4 +1,5 @@
 <template>
+<v-content>
   <v-container
     id="grid"
     fluid
@@ -28,6 +29,7 @@
       </v-flex>
     </v-layout>
   </v-container>
+  </v-content>
 </template>
 <script>
   export default {
