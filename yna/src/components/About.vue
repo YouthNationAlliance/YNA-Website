@@ -1,6 +1,6 @@
 <template>
 <p> About </p>
-<!-- About page WIP)-->
+<!-- About page (WIP)-->
 </template>
 
 <script>

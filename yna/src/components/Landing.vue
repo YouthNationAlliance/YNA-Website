@@ -1,8 +1,6 @@
 <template>
-<<<<<<< HEAD
   <p> Landing Page </p>
   <!-- The landing page. Go to https://www.ynalliance.ca/ -->
-=======
   <div>
     <v-layout row wrap align-center justify-center id="head-bg">
       <v-flex column id="head-box" class="text-xs-center white--text" xs6>
@@ -15,7 +13,6 @@
     <v-layout>
     </v-layout>
   </div>
->>>>>>> 52f252aba557b0dc24570906f60de74d0a069c6b
 </template>
 
 <style>
