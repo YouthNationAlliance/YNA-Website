@@ -13,7 +13,7 @@
       <v-btn
         :disabled="!valid"
         @click="submit"
-      >
+      />
     </v-form>
   </v-flex>
 </template>

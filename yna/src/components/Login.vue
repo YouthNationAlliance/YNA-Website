@@ -5,12 +5,14 @@
         <h1>Don't have an account? Join us here.</h1>
         <v-form v-model="valid" align-center justify-center>
           <v-text-field
+            id="email"
             v-model="email"
             :rules="emailRules"
             label="Email"
             required
           ></v-text-field>
           <v-text-field
+            id="password"
             v-model="password"
             :append-icon="show1 ? 'visibility_off' : 'visibility'"
             :rules="passRules"
@@ -30,7 +32,7 @@
 </template>
 
 <script>
-  // import axios from 'axios'
+import axios from 'axios'
 
   export default {
     data: () => ({
@@ -49,24 +51,10 @@
 
     methods: {
       login () {
-        if (this.$refs.form.validate()) {
-          // Native form submission is not yet supported
-          /*
-          axios.post('/api/submit', {
-            name: this.name,
-            email: this.email,
-          })
-          */
-        }
-      },
-      signup () {
-        // Native form submission is not yet supported
-        /*
-        axios.post('/api/submit', {
-          name: this.name,
-          email: this.email,
+        axios.post('/login', {
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
         })
-        */
       },
 
       clear () {
