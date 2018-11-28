@@ -167,7 +167,6 @@ export default {
   },
   data () {
     return {
-      title1: 'Volunteers'
       items: [
       { title: 'Before You Begin'},
       { title: 'Getting Started'},
