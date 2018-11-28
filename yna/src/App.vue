@@ -81,7 +81,6 @@ import Setup from './components/Setup'
 import Calendar from './components/Calendar'
 import Maps from './components/Maps'
 import Register from './components/Register'
-import Dashboard from './components/Dashboard'
 import Qualifications from './components/Qualifications'
 import Landing from './components/Landing'
 
@@ -95,7 +94,6 @@ export default {
     Maps,
     Register,
     Qualifications,
-    Dashboard,
     Landing
   },
   data () {
