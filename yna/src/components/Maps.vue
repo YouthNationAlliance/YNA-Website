@@ -1,5 +1,6 @@
 /* We're copying the map from here: https://volunteers.ynalliance.ca/opportunities/
 We have to create a search bar right under the maps */
+
 <template>
   <h1>Maps</h1>
   <h2>Volunteer Opportunities</h2>

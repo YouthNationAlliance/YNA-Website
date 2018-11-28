@@ -2,6 +2,11 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import App from './App.vue'
 import DaySpanVuetify from 'dayspan-vuetify'
+/* import router from './router'
+import { store } from './store.js/' */
+// Need this to use Firebase
+const fb = require('./firebaseConfig.js')
+
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'

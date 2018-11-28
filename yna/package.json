@@ -11,6 +11,7 @@
     "axios": "^0.18.0",
     "dayspan": "^0.12.4",
     "dayspan-vuetify": "^0.3.6",
+    "firebase": "^5.5.9",
     "vue": "^2.5.17",
     "vue-fullcalendar": "^1.0.9",
     "vue-socket.io": "^2.1.1-b",

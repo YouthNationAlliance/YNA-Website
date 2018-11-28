@@ -2,7 +2,7 @@
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
-        <h1>Join us here.</h1>
+        <h1>Don't have an account? Join us here.</h1>
         <v-form v-model="valid" align-center justify-center>
           <v-text-field
             v-model="email"

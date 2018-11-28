@@ -17,9 +17,37 @@
         flat
         href=""
       >
-        <span class="mr-2">Volunteer Opportunities</span>
+        <span class="mr-2">About</span>
+      </v-btn>
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Events</span>
       </v-btn>
 
+      <div class="text-xs-center">
+        <v-menu offset-y>
+        <v-btn
+            slot="activator"
+            flat
+          >
+            Volunteers
+          </v-btn>
+          <v-list>
+            <v-list-tile
+              v-for="(item, index) in items"
+              :key="index"
+              @click=""
+            >
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </div>
+
+
+      <!--
       <div class="text-xs-center">
         <v-menu offset-y>
         <v-btn
@@ -39,6 +67,51 @@
           </v-list>
         </v-menu>
       </div>
+      -->
+
+      <div class="text-xs-center">
+        <v-menu offset-y>
+        <v-btn
+            slot="activator"
+            flat
+          >
+            Organizations
+          </v-btn>
+          <v-list>
+            <v-list-tile
+              v-for="(item, index) in items1"
+              :key="index"
+              @click=""
+            >
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </div>
+
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Contact</span>
+      </v-btn>
+
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Join Us</span>
+      </v-btn>
+
+      <v-btn
+        flat
+        href=""
+      >
+        <span class="mr-2">Login</span>
+      </v-btn>
+
+
+      <!--
       <v-btn
         flat
         href=""
@@ -51,19 +124,20 @@
       >
         <span class="mr-2">Calendar</span>
       </v-btn>
+      -->
     </v-toolbar>
 
     <v-content>
       <!-- <Calendar/> -->
       <Connect/>
-      <!--<Login/>-->
       <Setup/>
       <Login/>
+      <Dashboard/>
+      <!-- <Qualifications/> -->
+      <!-- <Maps/> -->
+      <Register/>
+      <Landing/>
     </v-content>
-    <Dashboard/>
-    <!-- <Qualifications/> -->
-    <!-- <Maps/> -->
-    <Register/>
   </v-app>
 </template>
 
@@ -76,6 +150,7 @@ import Maps from './components/Maps'
 import Register from './components/Register'
 import Dashboard from './components/Dashboard'
 import Qualifications from './components/Qualifications'
+import Landing from './components/Landing'
 
 export default {
   name: 'App',
@@ -87,20 +162,32 @@ export default {
     Maps,
     Register,
     Qualifications,
-    Dashboard
+    Dashboard,
+    Landing
   },
   data () {
     return {
+      title1: 'Volunteers'
+      items: [
+      { title: 'Before You Begin'},
+      { title: 'Getting Started'},
+      { title: 'Volunteer FAQs'}
+      ],
+      items1: [
+      { title: 'Supporters and Partners'}
+      ]
+      /*
       items: [
       { title: 'Login'},
       { title: 'Register' },
       { title: 'Account Details'},
       { title: 'Account Settings'}
       ]
+      */
     }
   },
   mounted: function() {
-  //
+    //
   }
 }
 </script>
