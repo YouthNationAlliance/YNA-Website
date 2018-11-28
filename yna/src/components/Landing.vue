@@ -1,6 +1,4 @@
 <template>
-  <p> Landing Page </p>
-  <!-- The landing page. Go to https://www.ynalliance.ca/ -->
   <div>
     <v-layout row wrap align-center justify-center id="head-bg">
       <v-flex column id="head-box" class="text-xs-center white--text" xs6>
@@ -23,14 +21,14 @@
     background-size: cover;
   }
   #head-box{
-    background-color: purple;
-    opacity: 0.7;
+    background-color: rgb(79, 46, 134);
+    opacity: 0.8;
     padding: 30px;
   }
   #spacer{
     width: 100%;
     height: 30px;
-    background-color: purple;
+    background-color: rgb(79, 46, 134);
   }
 </style>
 

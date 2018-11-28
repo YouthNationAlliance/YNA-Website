@@ -132,7 +132,6 @@
       <Connect/>
       <Setup/>
       <Login/>
-      <Dashboard/>
       <Qualifications/>
       <Maps/>
       <Register/> -->
@@ -191,7 +190,6 @@ export default {
     }
   },
   mounted: function() {
-    //
   }
 }
 </script>
