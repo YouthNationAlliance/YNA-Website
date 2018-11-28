@@ -54,17 +54,25 @@
     </v-toolbar>
 
     <v-content>
-      <!-- <Calendar/> -->
+      <!-- <Calendar/>
       <Connect/>
       <Setup/>
       <Login/>
-      <!-- <Qualifications/> -->
-      <!-- <Maps/> -->
-      <Register/>
+      <Dashboard/>
+      <Qualifications/>
+      <Maps/>
+      <Register/> -->
       <Landing/>
     </v-content>
   </v-app>
 </template>
+
+<style>
+  @import "https://fonts.googleapis.com/css?family=Raleway";
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+</style>
 
 <script>
 import Connect from './components/Connect'
