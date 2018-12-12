@@ -3,20 +3,19 @@
     <!-- The landing page. Go to https://www.ynalliance.ca/ -->
     <div>
       <v-layout row wrap align-center justify-center id="head-bg">
-        <v-flex column class="text-xs-center white--text" id="head-box" xs6>
+        <v-flex column class="text-xs-center white--text" id="head-box" xs8>
           <h1>ARE YOU READY TO</h1>
-          <h2>IGNITE YOUR PASSION FOR VOLUNTEERING?</h2>
-          <v-btn round color="white purple--text">JOIN US TODAY</v-btn>
+          <h3>IGNITE YOUR PASSION FOR VOLUNTEERING?</h3>
+          <v-btn round color="white purple--text" id="joinUs"><h2>JOIN US TODAY</h2></v-btn>
         </v-flex>
       </v-layout>
       <div id="spacer"></div>
-      <v-container grid-list-md align-start>
-        <v-layout align-center>
-          <p>WHO WE ARE &nbsp</p>
-          <v-flex column class="black" xs2></v-flex>
-        </v-layout>
-        <p>FIND MEANINGFUL</p>
-        <p>VOLUNTEERING.</p>
+      <v-container algin-start>
+        <img src="../assets/png/headers/FindMeaningfulVolunteering.png" width="40%"></img>
+        <p>YNA fundamendally believes that students need to be able to network and connect
+        with those in the community. Our main objective is to provide students from all
+        walks of life with valuable volunteering opportunities and to support  local charities
+         and/or organizations in need of volunteers.</p>
       </v-container>
     </div>
   </div>
@@ -26,10 +25,11 @@
   #head-bg{
     min-width: 100%;
     height: 600px;
-    background-image: url("../assets/laptop.jpg");
+    background-image: url("../assets/jpg/mainscreen.jpg");
     background-size: cover;
   }
   #head-box{
+    min-height: 250px;
     background-color: #4f2e86;
     opacity: 0.7;
     padding: 30px;
@@ -38,6 +38,10 @@
     width: 100%;
     height: 50px;
     background-color: #4f2e86;
+  }
+  #joinUs{
+    width: 50%;
+    height: 55px;
   }
 </style>
 

@@ -16,6 +16,7 @@ express()
   .get('/vue', (req, res) => res.sendFile(__dirname + '/yna/dist/index.html'))
   .post('/login', (req, res) => {
     console.log(req.body.email);
+    console.log(req.body.password);
   })
   .post('/signup', (req, res) => {
 

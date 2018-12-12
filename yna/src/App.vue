@@ -143,11 +143,21 @@
 
 <style>
   @import "https://fonts.googleapis.com/css?family=Raleway";
-  body{
-    font-family: 'Raleway', sans-serif;
-  }
   h1{
     font-family: 'Raleway', sans-serif;
+    font-size: 36pt;
+  }
+  h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 30pt;
+  }
+  h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 24pt;
+  }
+  p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16pt;
   }
 </style>
 
