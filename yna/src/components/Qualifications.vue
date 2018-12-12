@@ -1,40 +1,47 @@
 <template>
-  <v-container
-    id="grid"
-    fluid
-    grid-list-sm
-    tag="section"
+<div>
+<h1>Qualifications</h1>
+  <v-combobox
+    v-model="chips"
+    :items="items"
+    label="Your favorite hobbies"
+    chips
+    clearable
+    prepend-icon="filter_list"
+    solo
+    multiple
   >
-    <v-layout row wrap>
-      <v-flex tag="h1" class="headline">Qualifications</v-flex>
-      <v-flex d-flex xs12 order-xs5>
-        <v-layout column>
-          <v-flex>
-            <v-card flat color="purple" dark>
-              <v-card-text>{{ Name }}</v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex>
-            <v-card flat>
-              <v-card-text>{{ Age }}</v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex>
-            <v-card flat color="purple" dark>
-              <v-card-text>{{ Hours }}</v-card-text>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-  </v-container>
+    <template slot="selection" slot-scope="data">
+      <v-chip
+        color="purple darken-3"
+        text-color="white"
+        :selected="data.selected"
+        close
+        @input="remove(data.item)"
+      >
+      <v-avatar>
+        <v-icon>check_circle</v-icon>
+      </v-avatar>
+        <strong>{{ data.item }}</strong>&nbsp;
+      </v-chip>
+    </template>
+  </v-combobox>
+  </div>
 </template>
 <script>
   export default {
-    data: () => ({
-      Name: `Name`,
-      Age: 'Age',
-      Hours: 'No. of Hours'
-    })
+    data () {
+      return {
+        chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
+        items: ['Streaming', 'Eating']
+      }
+    },
+
+    methods: {
+      remove (item) {
+        this.chips.splice(this.chips.indexOf(item), 1)
+        this.chips = [...this.chips]
+      }
+    }
   }
 </script>
