@@ -146,6 +146,9 @@
   body{
     font-family: 'Raleway', sans-serif;
   }
+  h1{
+    font-family: 'Raleway', sans-serif;
+  }
 </style>
 
 <script>
