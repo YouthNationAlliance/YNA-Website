@@ -131,12 +131,12 @@
       <!-- <Calendar/>
       <Connect/>
       <Setup/>
-      <Login/>
       <Dashboard/>
       <Qualifications/>
       <Maps/>
       <Register/> -->
       <Landing/>
+      <Login/>
     </v-content>
   </v-app>
 </template>
