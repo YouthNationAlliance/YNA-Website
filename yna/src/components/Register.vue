@@ -30,7 +30,8 @@
 </template>
 
 <script>
-  // import axios from 'axios'
+  // import axios from 'axios';
+  import firebase from 'firebase';
 
   export default {
     data: () => ({
@@ -48,27 +49,16 @@
     }),
 
     methods: {
-      login () {
-        if (this.$refs.form.validate()) {
-          // Native form submission is not yet supported
-          /*
-          axios.post('/api/submit', {
-            name: this.name,
-            email: this.email,
-          })
-          */
-        }
+      signUp: function() {
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+          function (user) {
+            alert('Your account has been created!')
+          },
+          function (err) {
+            alert('Oops. Something went wrong. ' + err.message)
+          }
+        );
       },
-      signup () {
-        // Native form submission is not yet supported
-        /*
-        axios.post('/api/submit', {
-          name: this.name,
-          email: this.email,
-        })
-        */
-      },
-
       clear () {
       }
     }

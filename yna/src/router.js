@@ -10,7 +10,7 @@ import Settings from './components/Settings.vue';
 import Connect from './components/Connect.vue';
 import Landing from './components/Landing.vue';
 import Maps from './components/Maps.vue';
-import Dashboard from './components/Dashboard.vue';
+/* import Dashboard from './components/Dashboard.vue'; */
 import About from './components/About.vue';
 
 Vue.use(Router);
@@ -29,19 +29,48 @@ export default new Router({
     },
     {
       path: '/settings',
-      name: 'about',
-      component: About
+      name: 'settings',
+      component: Settings
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/register',
+      name: 'register',
+      component: Register
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/qualifications',
+      name: 'Qualifications',
+      component: Qualifications
     },
-
+    {
+      path: '/landing',
+      name: 'Landing',
+      component: Landing
+    },
+    {
+      path: '/setup',
+      name: 'setup',
+      component: Setup
+    },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: Calendar
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/maps',
+      name: 'maps',
+      component: Maps
+    },
+    {
+      path: '/qualifications',
+      name: 'Qualifications',
+      component: Qualifications
+    },
   ]
 });
