@@ -131,19 +131,37 @@
       <!-- <Calendar/>
       <Connect/>
       <Setup/>
+<<<<<<< HEAD
       <Login/>
+=======
+      <Dashboard/>
+>>>>>>> 3fedd987d984d136ce20b30a9c0e4dd204073f9f
       <Qualifications/>
       <Maps/>
       <Register/> -->
       <Landing/>
+      <Login/>
     </v-content>
   </v-app>
 </template>
 
 <style>
   @import "https://fonts.googleapis.com/css?family=Raleway";
-  body{
+  h1{
     font-family: 'Raleway', sans-serif;
+    font-size: 36pt;
+  }
+  h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 30pt;
+  }
+  h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 24pt;
+  }
+  p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16pt;
   }
 </style>
 
