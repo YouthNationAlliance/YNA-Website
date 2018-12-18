@@ -29,29 +29,19 @@
     background-size: cover;
   }
   #head-box{
-<<<<<<< HEAD
-    background-color: rgb(79, 46, 134);
-    opacity: 0.8;
-=======
     min-height: 250px;
     background-color: #4f2e86;
     opacity: 0.7;
->>>>>>> 3fedd987d984d136ce20b30a9c0e4dd204073f9f
     padding: 30px;
   }
   #spacer{
     width: 100%;
-<<<<<<< HEAD
-    height: 30px;
-    background-color: rgb(79, 46, 134);
-=======
     height: 50px;
     background-color: #4f2e86;
   }
   #joinUs{
     width: 50%;
     height: 55px;
->>>>>>> 3fedd987d984d136ce20b30a9c0e4dd204073f9f
   }
 </style>
 

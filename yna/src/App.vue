@@ -131,11 +131,8 @@
       <!-- <Calendar/>
       <Connect/>
       <Setup/>
-<<<<<<< HEAD
       <Login/>
-=======
       <Dashboard/>
->>>>>>> 3fedd987d984d136ce20b30a9c0e4dd204073f9f
       <Qualifications/>
       <Maps/>
       <Register/> -->
