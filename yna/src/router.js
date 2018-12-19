@@ -5,7 +5,6 @@ import Login from './components/Login.vue';
 import Qualifications from './components/Qualifications.vue';
 import Calendar from './components/Calendar.vue';
 import Setup from './components/Setup.vue';
-import Register from './components/Register.vue';
 import Settings from './components/Settings.vue';
 import Connect from './components/Connect.vue';
 import Landing from './components/Landing.vue';
@@ -31,11 +30,6 @@ export default new Router({
       path: '/settings',
       name: 'settings',
       component: Settings
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
     },
     {
       path: '/qualifications',

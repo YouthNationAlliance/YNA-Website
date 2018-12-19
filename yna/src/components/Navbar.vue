@@ -6,7 +6,7 @@
         <span class="font-weight-light">lliance</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat target="_blank" v-on:click="changePage('home')">
+      <v-btn flat target="_blank" @click="changePage('home')">
         <span class="mr-2" >Home</span>
       </v-btn>
       <v-btn flat href="">
@@ -50,7 +50,7 @@
         <span class="mr-2">Join Us</span>
       </v-btn>
 
-      <v-btn flat v-on:click="changePage('login')">
+      <v-btn flat @click="changePage('login')">
         <span class="mr-2">Login</span>
       </v-btn>
 
@@ -77,7 +77,6 @@
     methods: {
       changePage: function(page){
         this.$emit('newPage', page);
-        console.log(page);
       }
     }
   }

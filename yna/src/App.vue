@@ -6,13 +6,11 @@
       <template v-else>
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
-        <Login v-else-if="page === 'login'"/>
-        <Register v-else-if="page === 'register'"/>
-
+        <Login v-else-if="page === 'login'" @newPage="changePage"/>
+        <Setup v-else-if="page === 'setup'"/>
       </template>
       <!-- <Calendar/>
       <Connect/>
-      <Setup/>
       <Dashboard/>
       <Qualifications/>
       <Maps/>
@@ -47,7 +45,6 @@ import Login from './components/Login'
 import Setup from './components/Setup'
 import Calendar from './components/Calendar'
 import Maps from './components/Maps'
-import Register from './components/Register'
 import Qualifications from './components/Qualifications'
 import Landing from './components/Landing'
 import Navbar from './components/Navbar'
@@ -60,7 +57,6 @@ export default {
     Setup,
     Calendar,
     Maps,
-    Register,
     Qualifications,
     Landing,
     Navbar
