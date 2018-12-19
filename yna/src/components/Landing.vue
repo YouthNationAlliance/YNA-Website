@@ -13,7 +13,7 @@
       <div id="spacer" class="purpleBg"></div>
 
       <v-container algin-start>
-        <img src="../assets/png/headers/FindMeaningfulVolunteering.png" width="40%"></img>
+        <img src="../assets/png/headers/FindMeaningfulVolunteering.png" width="40%">
         <p>YNA fundamendally believes that students need to be able to network and connect
           with those in the community. Our main objective is to provide students from all
           walks of life with valuable volunteering opportunities and to support  local charities
@@ -24,7 +24,7 @@
 
         <v-layout row wrap>
           <v-flex column class="text-xs-center pa-4" xs4>
-            <img src="../assets/jpg/Volunteering.jpg" width="100%"></img>
+            <img src="../assets/jpg/Volunteering.jpg" width="100%">
             <v-layout row wrap class="text-xs-left ma-3 vl">
               <p class="title">DISCOVER THE LATEST</p>
               <p class="body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
@@ -32,7 +32,7 @@
             <v-btn large color="purple white--text ma-2"><p class="headline">VOLUNTEERING</p></v-btn>
           </v-flex>
           <v-flex column class="text-xs-center pa-4" xs4>
-            <img src="../assets/jpg/Leadership.jpg" width="100%"></img>
+            <img src="../assets/jpg/Leadership.jpg" width="100%">
             <v-layout row wrap class="text-xs-left ma-3 vl">
               <p class="title">ATTEND AND CONNECT</p>
               <p class="body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
@@ -40,7 +40,7 @@
             <v-btn large color="purple white--text ma-2"><p class="headline">LEADERSHIP</p></v-btn>
           </v-flex>
           <v-flex column class="text-xs-center pa-4" xs4>
-            <img src="../assets/jpg/MainScreenAlternate.jpg" width="100%"></img>
+            <img src="../assets/jpg/MainScreenAlternate.jpg" width="100%">
             <v-layout row wrap class="text-xs-left ma-3 vl">
               <p class="title">LEARN WHAT'S OUT THERE</p>
               <p class="body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
@@ -54,7 +54,7 @@
 
         <hr id="spacer2" class="purpleFg"/>
         <v-flex class="text-xs-right doodle">
-          <img src="../assets/png/doodles/doodles1.png" width="30%" id="doodle1"></img>
+          <img src="../assets/png/doodles/doodles1.png" width="30%" id="doodle1">
         </v-flex>
 
         <v-layout row wrap>

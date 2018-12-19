@@ -1,132 +1,5 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>YNA</span>
-        <span class="font-weight-light">lliance</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://www.ynalliance.ca/"
-        target="_blank"
-      >
-        <span class="mr-2">Home</span>
-      </v-btn>
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">About</span>
-      </v-btn>
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Events</span>
-      </v-btn>
-
-      <div class="text-xs-center">
-        <v-menu offset-y>
-        <v-btn
-            slot="activator"
-            flat
-          >
-            Volunteers
-          </v-btn>
-          <v-list>
-            <v-list-tile
-              v-for="(item, index) in items"
-              :key="index"
-              @click=""
-            >
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-      </div>
-
-
-      <!--
-      <div class="text-xs-center">
-        <v-menu offset-y>
-        <v-btn
-            slot="activator"
-            flat
-          >
-            Profile
-          </v-btn>
-          <v-list>
-            <v-list-tile
-              v-for="(item, index) in items"
-              :key="index"
-              @click=""
-            >
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-      </div>
-      -->
-
-      <div class="text-xs-center">
-        <v-menu offset-y>
-        <v-btn
-            slot="activator"
-            flat
-          >
-            Organizations
-          </v-btn>
-          <v-list>
-            <v-list-tile
-              v-for="(item, index) in items1"
-              :key="index"
-              @click=""
-            >
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-      </div>
-
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Contact</span>
-      </v-btn>
-
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Join Us</span>
-      </v-btn>
-
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Login</span>
-      </v-btn>
-
-
-      <!--
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Maps</span>
-      </v-btn>
-      <v-btn
-        flat
-        href=""
-      >
-        <span class="mr-2">Calendar</span>
-      </v-btn>
-      -->
-    </v-toolbar>
-
     <v-content>
       <!-- <Calendar/>
       <Connect/>
@@ -135,6 +8,7 @@
       <Qualifications/>
       <Maps/>
       <Register/> -->
+      <Navbar/>
       <Landing/>
       <Login/>
     </v-content>
@@ -170,6 +44,7 @@ import Maps from './components/Maps'
 import Register from './components/Register'
 import Qualifications from './components/Qualifications'
 import Landing from './components/Landing'
+import Navbar from './components/Navbar'
 
 export default {
   name: 'App',
@@ -181,26 +56,11 @@ export default {
     Maps,
     Register,
     Qualifications,
-    Landing
+    Landing,
+    Navbar
   },
   data () {
     return {
-      items: [
-      { title: 'Before You Begin'},
-      { title: 'Getting Started'},
-      { title: 'Volunteer FAQs'}
-      ],
-      items1: [
-      { title: 'Supporters and Partners'}
-      ]
-      /*
-      items: [
-      { title: 'Login'},
-      { title: 'Register' },
-      { title: 'Account Details'},
-      { title: 'Account Settings'}
-      ]
-      */
     }
   },
   mounted: function() {
