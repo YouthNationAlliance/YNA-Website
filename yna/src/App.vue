@@ -1,13 +1,15 @@
 <template>
   <v-app>
     <v-content>
+      <v-btn flat v-on:click="page = 'login'">Login test</v-btn>
       <template v-if="loggedIn">
       </template>
       <template v-else>
         <Navbar/>
-        <Landing v-if="landingPage === 'home'"/>
-        <Login v-else-if="landingPage === 'login'"/>
-        <Register v-else-if="landingPage === 'register'"/>
+        <Landing v-if="page === 'home'"/>
+        <Login v-else-if="page === 'login'"/>
+        <Register v-else-if="page === 'register'"/>
+
       </template>
       <!-- <Calendar/>
       <Connect/>
@@ -67,7 +69,7 @@ export default {
   data () {
     return {
       loggedIn: false,
-      landingPage: "home"
+      page: "home"
     }
   },
   mounted: function() {
