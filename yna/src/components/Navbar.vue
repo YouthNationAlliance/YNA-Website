@@ -6,8 +6,8 @@
         <span class="font-weight-light">lliance</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat href="https://www.ynalliance.ca/" target="_blank">
-        <span class="mr-2">Home</span>
+      <v-btn flat target="_blank" v-on:click="changePage('home')">
+        <span class="mr-2" >Home</span>
       </v-btn>
       <v-btn flat href="">
         <span class="mr-2">About</span>
@@ -75,8 +75,9 @@
     mounted: function() {
     },
     methods: {
-      changePage(newPage){
-        this.$parent.page = newPage;
+      changePage: function(page){
+        this.$emit('newPage', page);
+        console.log(page);
       }
     }
   }

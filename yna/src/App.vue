@@ -1,11 +1,10 @@
 <template>
   <v-app>
     <v-content>
-      <v-btn flat v-on:click="page = 'login'">Login test</v-btn>
       <template v-if="loggedIn">
       </template>
       <template v-else>
-        <Navbar/>
+        <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'"/>
         <Register v-else-if="page === 'register'"/>
@@ -73,6 +72,11 @@ export default {
     }
   },
   mounted: function() {
+  },
+  methods: {
+    changePage(page){
+      this.page = page;
+    }
   }
 }
 </script>
