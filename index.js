@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5000
 var firebase = require("firebase");
 
-//Firebase account setup
+// Firebase account setup
 var config = {
   apiKey: "AIzaSyAw3DA7G37Tk7FBcFiJpcSrNx8HS5Zmk4s",
   authDomain: "ynalliance-221903.firebaseapp.com",
@@ -37,7 +37,7 @@ express()
   .post('/login', (req, res) => {
     console.log(req.body.email);
     console.log(req.body.password);
-    //login
+    //Login
     firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if (user){
         console.log("login success");
