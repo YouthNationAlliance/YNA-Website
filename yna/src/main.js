@@ -13,15 +13,15 @@ import 'dayspan-vuetify/dist/lib/dayspan-vuetify.min.css'
 
 // Initialize Firebase
 const config = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SEND_ID"
+  apiKey: "AIzaSyAw3DA7G37Tk7FBcFiJpcSrNx8HS5Zmk4s",
+  authDomain: "ynalliance-221903.firebaseapp.com",
+  databaseURL: "https://ynalliance-221903.firebaseio.com",
+  projectId: "ynalliance-221903",
+  storageBucket: "ynalliance-221903.appspot.com",
+  messagingSenderId: "237369762242"
 };
 
-firebase.initializeApp(config);
+fb.initializeApp(config);
 
 Vue.use(Vuetify);
 

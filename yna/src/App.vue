@@ -131,7 +131,6 @@
       <!-- <Calendar/>
       <Connect/>
       <Setup/>
-      <Login/>
       <Dashboard/>
       <Qualifications/>
       <Maps/>
