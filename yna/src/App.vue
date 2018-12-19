@@ -128,15 +128,20 @@
     </v-toolbar>
 
     <v-content>
+      <template v-if="loggedIn">
+      </template>
+      <template v-else>
+        <Landing v-if="landingPage === 'home'"/>
+        <Login v-else-if="landingPage === 'login'"/>
+        <Register v-else-if="landingPage === 'register'"/>
+      </template>
       <!-- <Calendar/>
       <Connect/>
       <Setup/>
       <Dashboard/>
       <Qualifications/>
       <Maps/>
-      <Register/> -->
-      <Landing/>
-      <Login/>
+       -->
     </v-content>
   </v-app>
 </template>
@@ -186,13 +191,13 @@ export default {
   data () {
     return {
       items: [
-      { title: 'Before You Begin'},
-      { title: 'Getting Started'},
-      { title: 'Volunteer FAQs'}
+        { title: 'Before You Begin'},
+        { title: 'Getting Started'},
+        { title: 'Volunteer FAQs'}
       ],
       items1: [
-      { title: 'Supporters and Partners'}
-      ]
+        { title: 'Supporters and Partners'}
+      ],
       /*
       items: [
       { title: 'Login'},
@@ -201,6 +206,8 @@ export default {
       { title: 'Account Settings'}
       ]
       */
+      loggedIn: false,
+      landingPage: "home"
     }
   },
   mounted: function() {
