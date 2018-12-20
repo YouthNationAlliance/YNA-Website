@@ -2,6 +2,14 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
+        <Navbar @newPage="changePage"/>
+        <Landing v-if="landingPage === 'home'"/>
+        <Signout v-else-if="landingPage === 'signout'"/>
+        <Maps v-else-if="landingPage === 'maps'"/>
+        <Qualifications v-else-if="landingPage === 'qualifications'"/>
+        <Setup v-else-if="landingPage === 'setup'"/>
+        <Settings v-else-if="landingPage === 'settings'"/>
+        <!-- <Connect/> -->
       </template>
       <template v-else>
         <Navbar @newPage="changePage"/>
@@ -54,6 +62,9 @@ import Maps from './components/Maps'
 import Qualifications from './components/Qualifications'
 import Landing from './components/Landing'
 import Navbar from './components/Navbar'
+import Settings from './components/Settings'
+import About from './components/About'
+import Home from './components/Home'
 
 export default {
   name: 'App',
@@ -65,19 +76,22 @@ export default {
     Maps,
     Qualifications,
     Landing,
-    Navbar
+    Navbar,
+    About,
+    Home,
+    Settings
   },
   data () {
     return {
       loggedIn: false,
-      page: "home"
+      landingPage: "register"
     }
   },
   mounted: function() {
   },
   methods: {
-    changePage(page){
-      this.page = page;
+    changePage(page) {
+      this.landingPage = page;
     }
   }
 }

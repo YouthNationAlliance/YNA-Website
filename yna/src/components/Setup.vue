@@ -66,6 +66,10 @@
   </v-container>
 </template>
 
+<style>
+
+</style>
+
 <script>
   import axios from 'axios'
 

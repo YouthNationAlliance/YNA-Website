@@ -60,11 +60,6 @@ export default new Router({
       path: '/maps',
       name: 'maps',
       component: Maps
-    },
-    {
-      path: '/qualifications',
-      name: 'Qualifications',
-      component: Qualifications
-    },
+    }
   ]
 });
