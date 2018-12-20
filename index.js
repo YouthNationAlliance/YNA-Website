@@ -37,7 +37,7 @@ express()
   .post('/login', (req, res) => {
     console.log(req.body.email);
     console.log(req.body.password);
-    //Login
+    // Login
     firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if (user){
         console.log("login success");
@@ -50,7 +50,7 @@ express()
     });
   })
   .post('/signup', (req, res) => {
-    //Signup
+    // Signup
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
         console.log("signup success")
@@ -62,5 +62,6 @@ express()
       console.log(errorMessage)
     });
   })
+
   .use(serveStatic(__dirname + "/yna/dist"))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

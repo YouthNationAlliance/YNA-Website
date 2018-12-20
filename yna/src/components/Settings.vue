@@ -4,6 +4,10 @@
     See https://volunteers.ynalliance.ca/user/username/ for more info -->
 </template>
 
+<style>
+
+</style>
+
 <script>
     export default {
 

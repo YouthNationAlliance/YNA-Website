@@ -3,6 +3,7 @@
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
         <h1>Register</h1>
+        <!-- Based off of this form: https://volunteers.ynalliance.ca/register/ -->
         <v-form v-model="valid" align-center justify-center>
           <v-text-field
             v-model="email"
@@ -22,7 +23,7 @@
             @click:append="show1 = !show1"
           ></v-text-field>
           <v-btn @click="login">Login</v-btn>
-          <v-btn @click="signup">Signup</v-btn>
+          <v-btn @click="signUp">Signup</v-btn>
         </v-form>
       </v-flex>
     </v-layout>
@@ -55,7 +56,7 @@
             alert('Your account has been created!')
           },
           function (err) {
-            alert('Oops. Something went wrong. ' + err.message)
+            alert('Oops. Something went wrong. ' + err.code + ' ' + err.message)
           }
         );
       },
