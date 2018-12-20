@@ -21,6 +21,12 @@
 
 <style>
   @import "https://fonts.googleapis.com/css?family=Raleway";
+  .purpleBg{
+    background-color: #4f2e86;
+  }
+  .purpleFg{
+    color: #4f2e86;
+  }
   h1{
     font-family: 'Raleway', sans-serif;
     font-size: 36pt;

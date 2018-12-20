@@ -23,7 +23,7 @@
             counter
             @click:append="show1 = !show1"
           ></v-text-field>
-          <v-btn @click="login">Login</v-btn>
+          <v-btn @click="login" class="purple white--text">Login</v-btn>
           <v-btn @click="toSignup">Signup</v-btn>
         </v-form>
       </v-flex>

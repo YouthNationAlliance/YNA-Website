@@ -75,12 +75,6 @@
 </template>
 
 <style>
-  .purpleBg{
-    background-color: #4f2e86;
-  }
-  .purpleFg{
-    color: #4f2e86;
-  }
   #head-bg{
     min-width: 100%;
     height: 600px;
