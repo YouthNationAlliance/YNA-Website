@@ -3,7 +3,7 @@
     <v-content>
       <template v-if="loggedIn">
         <Navbar @newPage="changePage"/>
-        <Landing v-if="landingPage === 'home'"/>
+        <Landing v-if="landingPage === 'home'"  @newPage="changePage"/>
         <Signout v-else-if="landingPage === 'signout'"/>
         <Maps v-else-if="landingPage === 'maps'"/>
         <Qualifications v-else-if="landingPage === 'qualifications'"/>
