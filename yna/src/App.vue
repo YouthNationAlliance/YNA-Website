@@ -84,14 +84,14 @@ export default {
   data () {
     return {
       loggedIn: false,
-      landingPage: "register"
+      page: "home"
     }
   },
   mounted: function() {
   },
   methods: {
     changePage(page) {
-      this.landingPage = page;
+      this.page = page;
     }
   }
 }
