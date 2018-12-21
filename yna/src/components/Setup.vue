@@ -1,23 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <v-flex xs12 sm8 md4>
-    <h1> Please fill in your info </h1>
-    <v-form v-model="valid" align-center justify-center>
-      <v-text-field v-model="firstname" label="First Name" required></v-text-field>
-      <v-text-field v-model="lastname" label="Last Name" required></v-text-field>
-      <v-text-field v-model="username" label="Username" required></v-text-field>
-      <v-text-field v-model="email" label="Email Address" required></v-text-field>
-      <v-text-field v-model="mobile" label="Mobile Number" required></v-text-field>
-      <v-text-field v-model="birthday" label="Birth Date" required></v-text-field>
-      <v-text-field v-model="school" label="Current School" required></v-text-field>
-      <v-text-field v-model="role" label="Role" required></v-text-field>
-      <v-btn
-        :disabled="!valid"
-        @click="submit"
-      />
-    </v-form>
-  </v-flex>
-=======
   <v-container>
     <v-layout row wrap justify-center>
       <h1> Sign up to be a part of YNA! </h1>
@@ -83,7 +64,6 @@
       </v-flex>
     </v-layout>
   </v-container>
->>>>>>> c6f04d43bd5955427794cf560665e144c0d3c5a7
 </template>
 
 <style>
@@ -96,17 +76,6 @@
   export default {
     data: () => ({
       valid: false,
-<<<<<<< HEAD
-      firstname: '',
-      lastname: '',
-      username: '',
-      email: '',
-      mobile: '',
-      school: '',
-      birthday: '',
-      role: ''
-    })
-=======
       user:'',
       password:'',
       first: '',
@@ -130,6 +99,5 @@
 
       }
     }
->>>>>>> c6f04d43bd5955427794cf560665e144c0d3c5a7
   }
 </script>
