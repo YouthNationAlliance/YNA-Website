@@ -24,7 +24,7 @@
             @click:append="show1 = !show1"
           ></v-text-field>
           <v-btn @click="login">Login</v-btn>
-          <!-- <v-btn @click="signup">Signup</v-btn> -->
+          <v-btn @click="signup">Signup</v-btn>
         </v-form>
       </v-flex>
     </v-layout>
