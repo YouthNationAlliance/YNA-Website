@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <v-flex xs12 sm8 md4>
     <h1> Please fill in your info </h1>
     <v-form v-model="valid" align-center justify-center>
@@ -16,6 +17,73 @@
       />
     </v-form>
   </v-flex>
+=======
+  <v-container>
+    <v-layout row wrap justify-center>
+      <h1> Sign up to be a part of YNA! </h1>
+    </v-layout>
+    <br/>
+    <br/>
+    <v-layout row align-center justify-center>
+      <v-flex xs12 sm8 md4>
+        <v-form v-model="valid" align-center justify-center>
+
+          <v-layout row wrap>
+            <v-flex column xs6>
+              <v-text-field v-model="username" label="Username" required></v-text-field>
+            </v-flex>
+            <v-flex column xs6>
+              <v-text-field
+                id="password"
+                v-model="password"
+                :append-icon="show1 ? 'visibility_off' : 'visibility'"
+                :rules="passRules"
+                :type="show1 ? 'text' : 'password'"
+                name="input-10-1"
+                label="Password"
+                hint="At least 8 characters"
+                counter
+                @click:append="show1 = !show1"
+              ></v-text-field>
+            </v-flex>
+          </v-layout>
+
+          <v-layout row wrap>
+            <v-flex column xs6>
+              <v-text-field v-model="first" label="First Name" required></v-text-field>
+            </v-flex>
+            <v-flex column xs6>
+              <v-text-field v-model="last" label="Last Name" required></v-text-field>
+            </v-flex>
+          </v-layout>
+
+          <v-layout row wrap>
+            <v-flex column xs 6>
+              <v-text-field v-model="number" label="Mobile Number" required></v-text-field>
+            </v-flex>
+            <v-flex column xs 6>
+              <v-text-field v-model="birthday" label="Birth Date" required></v-text-field>
+            </v-flex>
+          </v-layout>
+
+          <v-text-field
+            id="email"
+            v-model="email"
+            :rules="emailRules"
+            label="Email"
+            required
+          ></v-text-field>
+          <v-text-field v-model="school" label="Current School" required></v-text-field>
+
+          <v-layout justify-center>
+            <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
+          </v-layout>
+
+        </v-form>
+      </v-flex>
+    </v-layout>
+  </v-container>
+>>>>>>> c6f04d43bd5955427794cf560665e144c0d3c5a7
 </template>
 
 <style>
@@ -23,9 +91,12 @@
 </style>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data: () => ({
       valid: false,
+<<<<<<< HEAD
       firstname: '',
       lastname: '',
       username: '',
@@ -35,5 +106,30 @@
       birthday: '',
       role: ''
     })
+=======
+      user:'',
+      password:'',
+      first: '',
+      last: '',
+      email: '',
+      phone:'',
+      birthday:'',
+      school: '',
+
+      emailRules: [
+        v => !!v || 'Email is required',
+        v => /.+@.+/.test(v) || 'Email must be valid'
+      ],
+      passRules: [
+        v => !!v || 'Password is required',
+        v => v.length >= 8 || 'Min 8 characters'
+      ]
+    }),
+    methods: {
+      signup(){
+
+      }
+    }
+>>>>>>> c6f04d43bd5955427794cf560665e144c0d3c5a7
   }
 </script>

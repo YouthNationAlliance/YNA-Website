@@ -3,7 +3,7 @@
     <v-content>
       <template v-if="loggedIn">
         <Navbar @newPage="changePage"/>
-        <Landing v-if="landingPage === 'home'"/>
+        <Landing v-if="landingPage === 'home'"  @newPage="changePage"/>
         <Signout v-else-if="landingPage === 'signout'"/>
         <Maps v-else-if="landingPage === 'maps'"/>
         <Qualifications v-else-if="landingPage === 'qualifications'"/>
@@ -13,18 +13,28 @@
       </template>
       <template v-else>
         <Navbar @newPage="changePage"/>
-        <Landing v-if="landingPage === 'home'"/>
-        <Login v-else-if="landingPage === 'login'"/>
-        <!-- <Register v-else-if="landingPage === 'register'"/> -->
-        <Setup v-else-if="landingPage === 'setup'"/>
-        <!-- <Connect/> -->
+        <Landing v-if="page === 'home'"/>
+        <Login v-else-if="page === 'login'" @newPage="changePage"/>
+        <Setup v-else-if="page === 'setup'"/>
       </template>
+      <!-- <Calendar/>
+      <Connect/>
+      <Dashboard/>
+      <Qualifications/>
+      <Maps/>
+       -->
     </v-content>
   </v-app>
 </template>
 
 <style>
   @import "https://fonts.googleapis.com/css?family=Raleway";
+  .purpleBg{
+    background-color: #4f2e86;
+  }
+  .purpleFg{
+    color: #4f2e86;
+  }
   h1{
     font-family: 'Raleway', sans-serif;
     font-size: 36pt;
@@ -49,7 +59,6 @@ import Login from './components/Login'
 import Setup from './components/Setup'
 import Calendar from './components/Calendar'
 import Maps from './components/Maps'
-import Register from './components/Register'
 import Qualifications from './components/Qualifications'
 import Landing from './components/Landing'
 import Navbar from './components/Navbar'
@@ -65,7 +74,6 @@ export default {
     Setup,
     Calendar,
     Maps,
-    Register,
     Qualifications,
     Landing,
     Navbar,
@@ -76,14 +84,14 @@ export default {
   data () {
     return {
       loggedIn: false,
-      landingPage: "register"
+      page: "home"
     }
   },
   mounted: function() {
   },
   methods: {
     changePage(page) {
-      this.landingPage = page;
+      this.page = page;
     }
   }
 }

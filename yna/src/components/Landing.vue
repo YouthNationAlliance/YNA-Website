@@ -6,7 +6,7 @@
         <v-flex column class="text-xs-center white--text purpleBg" id="head-box" xs8>
           <h1>ARE YOU READY TO</h1>
           <h3>IGNITE YOUR PASSION FOR VOLUNTEERING?</h3>
-          <v-btn round color="white purple--text" id="joinUs"><h2>JOIN US TODAY</h2></v-btn>
+          <v-btn round color="white purple--text" id="joinUs" @click="changePage('setup')"><h2>JOIN US TODAY</h2></v-btn>
         </v-flex>
       </v-layout>
 
@@ -75,12 +75,6 @@
 </template>
 
 <style>
-  .purpleBg{
-    background-color: #4f2e86;
-  }
-  .purpleFg{
-    color: #4f2e86;
-  }
   #head-bg{
     min-width: 100%;
     height: 600px;
@@ -123,6 +117,11 @@ export default {
             images: {
             }
         }
+    },
+    methods: {
+      changePage(page) {
+        this.$emit('newPage', page);
+      }
     }
 }
 </script>
