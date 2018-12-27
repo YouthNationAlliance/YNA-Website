@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Navbar @newPage="changePage"/>
+        <Navbar  v-if="!loggedIn" @newPage="changePage"/>
         <Dashboard v-if="loggedIn"/>
         <Landing v-if="landingPage === 'home'"  @newPage="changePage"/>
         <Signout v-else-if="landingPage === 'signout'"/>
@@ -86,7 +86,7 @@ export default {
   },
   data () {
     return {
-      loggedIn: false,
+      loggedIn: true,
       page: "home"
     }
   },
