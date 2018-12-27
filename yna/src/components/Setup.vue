@@ -7,7 +7,7 @@
     <br/>
     <v-layout row align-center justify-center>
       <v-flex xs12 sm8 md4>
-        <v-form v-model="valid" align-center justify-center>
+        <v-form v-model="valid" align-center justify-center @submit.prevent="signup()">
 
           <v-layout row wrap>
             <v-flex column xs6>
@@ -74,6 +74,7 @@
   import axios from 'axios'
 
   export default {
+    name: 'signup-form',
     data: () => ({
       valid: false,
       user:'',
@@ -84,6 +85,16 @@
       phone:'',
       birthday:'',
       school: '',
+      errors: {
+        user: false,
+        password: false,
+        first: false,
+        last: false,
+        email: false,
+        phone: false,
+        birthday: false,
+        school: false
+      },
 
       emailRules: [
         v => !!v || 'Email is required',
@@ -95,8 +106,14 @@
       ]
     }),
     methods: {
-      signup(){
-
+      signup: function() {
+        // console.log(user: this.user, email: this.email);
+        alert('Processing!');
+      },
+      validateEmail: function() {
+        const isValid = window.isValidEmail(this.email);
+        // console.log(isValid);
+        this.errors.email = !isValid;
       }
     }
   }

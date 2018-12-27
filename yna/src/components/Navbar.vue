@@ -42,11 +42,11 @@
         </v-menu>
       </div>
 
-      <v-btn flat flat @click="changePage('contact')">
+      <v-btn flat @click="changePage('contact')">
         <span class="mr-2">Contact</span>
       </v-btn>
 
-      <v-btn flat flat @click="changePage('setup')">
+      <v-btn flat @click="changePage('setup')">
         <span class="mr-2">Join Us</span>
       </v-btn>
 
