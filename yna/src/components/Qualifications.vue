@@ -2,9 +2,8 @@
 <div>
 <h1>Qualifications</h1>
   <v-combobox
-    v-model="chips"
-    :items="items"
-    label="Your favorite hobbies"
+    v-model="qualifications"
+    label="Enter Your Qualifications Here"
     chips
     clearable
     prepend-icon="filter_list"
@@ -13,7 +12,7 @@
   >
     <template slot="selection" slot-scope="data">
       <v-chip
-        color="purple darken-3"
+        color="purple darken-4"
         text-color="white"
         :selected="data.selected"
         close
@@ -30,17 +29,14 @@
 </template>
 <script>
   export default {
-    data () {
-      return {
-        chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
-        items: ['Streaming', 'Eating']
-      }
-    },
+    data: () => ({
+        qualifications: ["playing video games", "yeeting"],
+    }),
 
     methods: {
       remove (item) {
-        this.chips.splice(this.chips.indexOf(item), 1)
-        this.chips = [...this.chips]
+        this.qualifications.splice(this.qualifications.indexOf(item), 1)
+        this.qualifications = [...this.qualifications]
       }
     }
   }

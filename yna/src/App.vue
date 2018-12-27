@@ -3,6 +3,7 @@
     <v-content>
       <template v-if="loggedIn">
         <Navbar @newPage="changePage"/>
+        <Dashboard v-if="loggedIn"/>
         <Landing v-if="landingPage === 'home'"  @newPage="changePage"/>
         <Signout v-else-if="landingPage === 'signout'"/>
         <Maps v-else-if="landingPage === 'maps'"/>
@@ -65,6 +66,7 @@ import Navbar from './components/Navbar'
 import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
+import Dashboard from './components/Dashboard'
 
 export default {
   name: 'App',
@@ -79,7 +81,8 @@ export default {
     Navbar,
     About,
     Home,
-    Settings
+    Settings,
+    Dashboard
   },
   data () {
     return {
