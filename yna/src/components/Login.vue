@@ -60,7 +60,7 @@ import axios from 'axios'
           if(res === 'success') {
             this.$emit('login', true);
           } else {
-            this.$emit('login', true);
+            this.$emit('login', false);
           }
         })
       },

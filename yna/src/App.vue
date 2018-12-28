@@ -89,9 +89,10 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-    }
+    },
     updateStatus(status) {
-      this.status = status;
+      this.loggedIn = status;
+      console.log(status);
     }
   }
 }
