@@ -42,7 +42,7 @@
               <v-text-field id="phone" v-model="number" label="Mobile Number" required></v-text-field>
             </v-flex>
             <v-flex column xs 6>
-              <v-text-field id="bitrhday" v-model="birthday" label="Birth Date" required></v-text-field>
+              <v-text-field id="birthday" v-model="birthday" label="Birth Date" required></v-text-field>
             </v-flex>
           </v-layout>
 
@@ -100,6 +100,9 @@
     }),
     methods: {
       signup() {
+
+        var ref = this;
+
         // console.log(user: this.user, email: this.email);
         alert('Processing!');
         axios.post('/signup', {
