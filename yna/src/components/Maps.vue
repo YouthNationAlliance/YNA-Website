@@ -9,7 +9,7 @@ We have to create a search bar right under the maps */
   // Create the toolbar
   <v-toolbar>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Sidebar</v-toolbar-title>
+    <v-toolbar-title>Maps</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn icon href="" target="_blank">

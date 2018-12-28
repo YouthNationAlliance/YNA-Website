@@ -39,7 +39,7 @@
 
           <v-layout row wrap>
             <v-flex column xs 6>
-              <v-text-field id="phone" v-model="number" label="Mobile Number" required></v-text-field>
+              <v-text-field id="phone" v-model="number" :rules="phoneRules" label="Mobile Number" required></v-text-field>
             </v-flex>
             <v-flex column xs 6>
               <v-text-field id="bitrhday" v-model="birthday" label="Birth Date" required></v-text-field>
@@ -96,6 +96,10 @@
       passRules: [
         v => !!v || 'Password is required',
         v => v.length >= 8 || 'Min 8 characters'
+      ],
+      phoneRules: [
+        v => !!v || 'Phone number is required',
+        v => /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v) || 'Phone number must be valid'
       ]
     }),
     methods: {
