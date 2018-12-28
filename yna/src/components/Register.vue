@@ -58,9 +58,9 @@
         console.log(res);
 
         if(res === 'success') {
-          loggedIn = true;
+          this.$emit('login', true);
         } else {
-          loggedIn = false;
+          this.$emit('login', true);
         }
       })
     }

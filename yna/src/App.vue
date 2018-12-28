@@ -2,21 +2,13 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Navbar v-if="!loggedIn" @newPage="changePage"/>
         <Dashboard v-if="loggedIn"/>
-        <Landing v-if="page === 'home'" @newPage="changePage"/>
-        <Signout v-else-if="page === 'signout'"/>
-        <Maps v-else-if="page === 'maps'"/>
-        <Qualifications v-else-if="page === 'qualifications'"/>
-        <Setup v-else-if="page === 'setup'"/>
-        <Settings v-else-if="page === 'settings'"/>
-        <Events v-else-if="page === 'events'"/>
         <!-- <Connect/> -->
       </template>
       <template v-else>
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
-        <Login v-else-if="page === 'login'" @newPage="changePage"/>
+        <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'"/>
         <About v-else-if="page === 'about'"/>
       </template>
@@ -97,6 +89,9 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
+    }
+    updateStatus(status) {
+      this.status = status;
     }
   }
 }
