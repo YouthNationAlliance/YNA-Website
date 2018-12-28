@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Navbar  v-if="!loggedIn" @newPage="changePage"/>
+        <Navbar v-if="!loggedIn" @newPage="changePage"/>
         <Dashboard v-if="loggedIn"/>
         <Landing v-if="page === 'home'" @newPage="changePage"/>
         <Signout v-else-if="page === 'signout'"/>

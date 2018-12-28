@@ -1,6 +1,6 @@
 <template>
   <!-- <v-app> -->
-    <v-toolbar app style="background-color: #673AB7;">
+    <v-toolbar app style="background-color: #4f2e86;">
       <v-toolbar-title class="headline text-uppercase" style="color: white;">
         <span>YNA</span>
         <span class="font-weight-light">lliance</span>
@@ -27,7 +27,7 @@
         <v-btn slot="activator" flat @click="changePage('volunteers')" color="white" style="font-weight: bold;">
             Volunteers
         </v-btn>
-          <v-list style="color: white; font-weight: bold; background-color: #673AB7;">
+          <v-list style="color: white; font-weight: bold; background-color: #4f2e86;">
             <v-list-tile @click="changePage('before_you_begin')">
               <v-list-tile-title>{{"Before You Begin"}}</v-list-tile-title>
             </v-list-tile>
@@ -46,7 +46,7 @@
         <v-btn slot="activator" flat @click="changePage('organizations')" color="white" style="font-weight: bold;">
             Organizations
           </v-btn>
-          <v-list style="color: white; font-weight: bold; background-color: #673AB7;">
+          <v-list style="color: white; font-weight: bold; background-color: #4f2e86;">
           <v-list-tile @click="changePage('supporters')">
             <v-list-tile-title>{{"Supporters and Partners"}}</v-list-tile-title>
           </v-list-tile>
@@ -61,13 +61,13 @@
       </div>
 
       <div class="join-us">
-        <v-btn flat @click="changePage('setup')" color="white">
+        <v-btn flat @click="changePage('setup')" style="color: white; border: 2px solid white;">
           <span class="mr-2" style="font-weight: bold;">Join Us</span>
         </v-btn>
       </div>
 
       <div class="login">
-        <v-btn flat @click="changePage('login')" color="white">
+        <v-btn flat @click="changePage('login')" style="color: #673AB7; height: 25px;">
           <span class="mr-2" style="font-weight: bold;">Login</span>
         </v-btn>
       </div>
@@ -76,29 +76,11 @@
 </template>
 
 <style>
-  .home {
-    background-color: #673AB7;
-  }
-  .about {
-    background-color: #673AB7;
-  }
-  .events {
-    background-color: #673AB7;
-  }
-  #volunteers {
-    background-color: #673AB7;
-  }
-  #organizations {
-    background-color: #673AB7;
-  }
-  .contact {
-    background-color: #673AB7;
-  }
   .join-us {
-    background-color: #673AB7;
+    padding-right: 15px;
   }
   .login {
-    background-color: #673AB7;
+    background-color: white;
   }
 </style>
 
