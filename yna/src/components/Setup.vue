@@ -115,10 +115,8 @@
 
           if(res.data === 'success') {
             this.$emit('login', true);
-            console.log("yeet");
           } else {
             this.$emit('login', false);
-            console.log("cust");
           }
         })
       },

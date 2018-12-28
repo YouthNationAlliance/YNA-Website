@@ -58,7 +58,7 @@ express()
       if(user){
         console.log("signup success");
         res.send("success");
-        firebase.database().ref('users/' + req.body.first).set({
+        firebase.database().ref('users/' + req.body.email).set({
           first_name: req.body.first,
           last_name: req.body.last,
           email: req.body.email,
