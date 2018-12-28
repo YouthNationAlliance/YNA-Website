@@ -41,25 +41,29 @@ express()
     firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if (user){
         console.log("login success");
+        res.sendStatus(200);
       }
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("login failure:");
       console.log(errorMessage);
+      res.sendStatus(404);
     });
   })
   .post('/signup', (req, res) => {
     // Signup
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
-        console.log("signup success")
+        console.log("signup success");
+        res.sendStatus(200);
       }
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("signup failure");
-      console.log(errorMessage)
+      console.log(errorMessage);
+      res.sendStatus(400);
     });
   })
 
