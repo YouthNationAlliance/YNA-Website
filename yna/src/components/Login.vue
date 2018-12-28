@@ -51,6 +51,9 @@ import axios from 'axios'
 
     methods: {
       login () {
+
+        var ref = this;
+
         axios.post('/login', {
           email: document.getElementById('email').value,
           password: document.getElementById('password').value
@@ -58,9 +61,9 @@ import axios from 'axios'
           console.log(res.data);
 
           if(res.data === 'success') {
-            this.$emit('login', true);
+            ref.$emit('login', true);
           } else {
-            this.$emit('login', false);
+            ref.$emit('login', false);
           }
         })
       },
