@@ -104,6 +104,9 @@
     }),
     methods: {
       signup() {
+
+        var ref = this;
+
         // console.log(user: this.user, email: this.email);
         alert('Processing!');
         axios.post('/signup', {
@@ -118,10 +121,10 @@
           //console.log(res.data);
 
           if(res.data === 'success') {
-            this.$emit('login', true);
+            ref.$emit('login', true);
             console.log("yeet");
           } else {
-            this.$emit('login', false);
+            ref.$emit('login', false);
             console.log("cust");
           }
         })

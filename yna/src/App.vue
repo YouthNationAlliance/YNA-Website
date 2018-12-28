@@ -9,7 +9,7 @@
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
-        <Setup v-else-if="page === 'setup'"/>
+        <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
       </template>
       <Footer/>
