@@ -14,8 +14,7 @@
               <v-text-field v-model="username" label="Username" required></v-text-field>
             </v-flex>
             <v-flex column xs6>
-              <v-text-field
-                id="password"
+              <v-text-field id="password"
                 v-model="password"
                 :append-icon="show1 ? 'visibility_off' : 'visibility'"
                 :rules="passRules"
@@ -31,30 +30,24 @@
 
           <v-layout row wrap>
             <v-flex column xs6>
-              <v-text-field v-model="first" label="First Name" required></v-text-field>
+              <v-text-field id="first" v-model="first" label="First Name" required></v-text-field>
             </v-flex>
             <v-flex column xs6>
-              <v-text-field v-model="last" label="Last Name" required></v-text-field>
+              <v-text-field id="last" v-model="last" label="Last Name" required></v-text-field>
             </v-flex>
           </v-layout>
 
           <v-layout row wrap>
             <v-flex column xs 6>
-              <v-text-field v-model="number" label="Mobile Number" required></v-text-field>
+              <v-text-field id="phone" v-model="number" label="Mobile Number" required></v-text-field>
             </v-flex>
             <v-flex column xs 6>
-              <v-text-field v-model="birthday" label="Birth Date" required></v-text-field>
+              <v-text-field id="bitrhday" v-model="birthday" label="Birth Date" required></v-text-field>
             </v-flex>
           </v-layout>
 
-          <v-text-field
-            id="email"
-            v-model="email"
-            :rules="emailRules"
-            label="Email"
-            required
-          ></v-text-field>
-          <v-text-field v-model="school" label="Current School" required></v-text-field>
+          <v-text-field id="email" v-model="email" :rules="emailRules" label="Email" required></v-text-field>
+          <v-text-field id="school" v-model="school" label="Current School" required></v-text-field>
 
           <v-layout justify-center>
             <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
@@ -106,11 +99,30 @@
       ]
     }),
     methods: {
-      signup: function() {
+      signup() {
         // console.log(user: this.user, email: this.email);
         alert('Processing!');
+        axios.post('/signup', {
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          first: document.getElementById('first').value,
+          last: document.getElementById('last').value,
+          phone: document.getElementById('phone').value,
+          birthday: document.getElementById('birthday').value,
+          school: document.getElementById('school').value
+        }).then(function(res) {
+          //console.log(res.data);
+
+          if(res.data === 'success') {
+            this.$emit('login', true);
+            console.log("yeet");
+          } else {
+            this.$emit('login', false);
+            console.log("cust");
+          }
+        })
       },
-      validateEmail: function() {
+      validateEmail() {
         const isValid = window.isValidEmail(this.email);
         // console.log(isValid);
         this.errors.email = !isValid;

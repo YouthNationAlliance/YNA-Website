@@ -53,10 +53,20 @@ express()
   })
   .post('/signup', (req, res) => {
     // Signup
+
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
         console.log("signup success");
         res.send("success");
+        firebase.database().ref('users/' + req.body.first).set({
+          first_name: req.body.first,
+          last_name: req.body.last,
+          email: req.body.email,
+          password: req.body.password,
+          phone_number: req.body.phone,
+          birthday: req.body.birthday,
+          school: req.body.school
+        });
       }
     }).catch(function(error) {
       var errorCode = error.code;
@@ -65,6 +75,7 @@ express()
       console.log(errorMessage);
       res.send("error");
     });
+
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
