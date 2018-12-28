@@ -50,6 +50,22 @@
     }),
 
     methods: {
+    signUp () {
+      axios.post('/login', {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      }).then(function(res) {
+        console.log(res);
+
+        if(res === 'success') {
+          loggedIn = true;
+        } else {
+          loggedIn = false;
+        }
+      })
+    }
+
+    /*
       signUp: function() {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
           function (user) {
@@ -60,6 +76,8 @@
           }
         );
       },
+      */
+
       clear () {
       }
     }

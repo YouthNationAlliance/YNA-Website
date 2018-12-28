@@ -41,14 +41,14 @@ express()
     firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if (user){
         console.log("login success");
-        res.sendStatus(200);
+        res.send("success");
       }
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("login failure:");
       console.log(errorMessage);
-      res.sendStatus(404);
+      res.send("error");
     });
   })
   .post('/signup', (req, res) => {
@@ -56,14 +56,14 @@ express()
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
         console.log("signup success");
-        res.sendStatus(200);
+        res.send("success");
       }
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("signup failure");
       console.log(errorMessage);
-      res.sendStatus(400);
+      res.send("error");
     });
   })
 

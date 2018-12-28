@@ -54,6 +54,14 @@ import axios from 'axios'
         axios.post('/login', {
           email: document.getElementById('email').value,
           password: document.getElementById('password').value
+        }).then(function(res) {
+          console.log(res);
+
+          if(res === 'success') {
+            loggedIn = true;
+          } else {
+            loggedIn = false;
+          }
         })
       },
       toSignup(){
