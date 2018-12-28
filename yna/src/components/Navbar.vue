@@ -1,27 +1,33 @@
 <template>
   <!-- <v-app> -->
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+    <v-toolbar app style="background-color: #673AB7;">
+      <v-toolbar-title class="headline text-uppercase" style="color: white;">
         <span>YNA</span>
         <span class="font-weight-light">lliance</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat target="_blank" @click="changePage('home')">
-        <span class="mr-2" >Home</span>
-      </v-btn>
-      <v-btn flat @click="changePage('about')">
-        <span class="mr-2">About Us</span>
-      </v-btn>
-      <v-btn flat @click="changePage('events')">
-        <span class="mr-2">Events</span>
-      </v-btn>
+      <div class="home">
+        <v-btn flat target="_blank" @click="changePage('home')" color="white">
+          <span class="mr-2" style="font-weight: bold;">Home</span>
+        </v-btn>
+      </div>
+      <div class="about">
+        <v-btn flat @click="changePage('about')" color="white">
+          <span class="mr-2" style="font-weight: bold;">About Us</span>
+        </v-btn>
+      </div>
+      <div class="events">
+        <v-btn flat @click="changePage('events')" color="white">
+          <span class="mr-2" style="font-weight: bold;">Events</span>
+        </v-btn>
+      </div>
 
-      <div class="text-xs-center">
-        <v-menu offset-y>
-        <v-btn slot="activator" flat @click="changePage('volunteers')">
+      <div class="text-xs-center" id="volunteers">
+        <v-menu offset-y color="white">
+        <v-btn slot="activator" flat @click="changePage('volunteers')" color="white" style="font-weight: bold;">
             Volunteers
         </v-btn>
-          <v-list>
+          <v-list style="color: white; font-weight: bold; background-color: #673AB7;">
             <v-list-tile @click="changePage('before_you_begin')">
               <v-list-tile-title>{{"Before You Begin"}}</v-list-tile-title>
             </v-list-tile>
@@ -35,12 +41,12 @@
         </v-menu>
       </div>
 
-      <div class="text-xs-center">
+      <div class="text-xs-center" id="organizations">
         <v-menu offset-y>
-        <v-btn slot="activator" flat @click="changePage('organizations')">
+        <v-btn slot="activator" flat @click="changePage('organizations')" color="white" style="font-weight: bold;">
             Organizations
           </v-btn>
-          <v-list>
+          <v-list style="color: white; font-weight: bold; background-color: #673AB7;">
           <v-list-tile @click="changePage('supporters')">
             <v-list-tile-title>{{"Supporters and Partners"}}</v-list-tile-title>
           </v-list-tile>
@@ -48,20 +54,53 @@
         </v-menu>
       </div>
 
-      <v-btn flat @click="changePage('contact')">
-        <span class="mr-2">Contact</span>
-      </v-btn>
+      <div class="contact">
+        <v-btn flat @click="changePage('contact')" color="white">
+          <span class="mr-2" style="font-weight: bold;">Contact</span>
+        </v-btn>
+      </div>
 
-      <v-btn flat @click="changePage('setup')">
-        <span class="mr-2">Join Us</span>
-      </v-btn>
+      <div class="join-us">
+        <v-btn flat @click="changePage('setup')" color="white">
+          <span class="mr-2" style="font-weight: bold;">Join Us</span>
+        </v-btn>
+      </div>
 
-      <v-btn flat @click="changePage('login')">
-        <span class="mr-2">Login</span>
-      </v-btn>
+      <div class="login">
+        <v-btn flat @click="changePage('login')" color="white">
+          <span class="mr-2" style="font-weight: bold;">Login</span>
+        </v-btn>
+      </div>
     </v-toolbar>
   <!-- </v-app> -->
 </template>
+
+<style>
+  .home {
+    background-color: #673AB7;
+  }
+  .about {
+    background-color: #673AB7;
+  }
+  .events {
+    background-color: #673AB7;
+  }
+  #volunteers {
+    background-color: #673AB7;
+  }
+  #organizations {
+    background-color: #673AB7;
+  }
+  .contact {
+    background-color: #673AB7;
+  }
+  .join-us {
+    background-color: #673AB7;
+  }
+  .login {
+    background-color: #673AB7;
+  }
+</style>
 
 <script>
   export default {
