@@ -55,9 +55,9 @@ import axios from 'axios'
           email: document.getElementById('email').value,
           password: document.getElementById('password').value
         }).then(function(res) {
-          console.log(res);
+          console.log(res.data);
 
-          if(res === 'success') {
+          if(res.data === 'success') {
             this.$emit('login', true);
           } else {
             this.$emit('login', false);
