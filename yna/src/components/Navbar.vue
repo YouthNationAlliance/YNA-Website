@@ -1,9 +1,11 @@
 <template>
   <!-- <v-app> -->
     <v-toolbar app style="background-color: #4f2e86;">
-      <v-toolbar-title class="headline text-uppercase" style="color: white;">
-        <span>YNA</span>
-        <span class="font-weight-light">lliance</span>
+      <v-toolbar-title>
+        <v-btn flat @click="changePage('home')" class="headline text-uppercase" style="color: white;">
+          <span>YNA</span>
+          <span class="font-weight-light">lliance</span>
+        </v-btn>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="home">

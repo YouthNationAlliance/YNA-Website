@@ -34,6 +34,10 @@
   .purpleFg{
     color: #4f2e86;
   }
+  .darkpurpleBg {
+    background-color: #4f2e86;
+    /* opacity: 0.1; */
+  }
   h1{
     font-family: 'Raleway', sans-serif;
     font-size: 36pt;

@@ -6,7 +6,7 @@
         <v-flex column class="text-xs-center white--text purpleBg" id="head-box" xs8 style="min-width: 100px;">
           <h1>ARE YOU READY TO</h1>
           <h3>IGNITE YOUR PASSION FOR VOLUNTEERING?</h3>
-          <v-btn round color="white purple--text" id="joinUs" @click="changePage('setup')"><h2>JOIN US TODAY</h2></v-btn>
+          <v-btn round style="color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('setup')"><h2>JOIN US TODAY</h2></v-btn>
         </v-flex>
       </v-layout>
 
@@ -101,6 +101,55 @@
         <v-flex class="text-xs-left doodle2">
           <img src="../assets/png/doodles/doodles2.png" width="25%" id="doodle3">
         </v-flex>
+
+        <v-layout row wrap>
+          <!-- Still need to finish header and background... -->
+          <v-flex column class="text-xs-center" pa-3 xs4>
+            <img src="../assets/png/pointsstore.png" width="250%" id="points_store">
+          </v-flex>
+          v-flex column class="text-xs-center" pa-3 xs4>
+
+          </v-flex>
+        </v-layout>
+
+        <v-layout row wrap>
+          <v-flex column class="text-xs-center" pa-3 xs4>
+            <img src="../assets/png/headers/ourcauseitsmore.png" width="150%" id="more_than_volunteering">
+            <p class="volunteer_description">
+              Volunteering is also a chance for youth to network and gain
+              new connections across Ontario. We seek to help our
+              members meet peers and employers, as well as help
+              organizations of leaders. Be more than just a volunteer. Do
+              something amazing.
+            </p>
+            <p class="mayor_name">
+              Dave Barrow
+            </p>
+            <p class="mayor_title">
+              Mayor of Richmond Hill
+            </p>
+          </v-flex>
+          <v-flex column class="text-xs-center" pa-3 xs4>
+            <video width="520" height="300" controls class="video1">
+              <source src="dave_barrow.mp4" type="video/mp4">
+              <source src="dave_barrow.ogg" type="video/ogg">
+              Your browser does not support the video tag. :(
+            </video>
+          </v-flex>
+        </v-layout>
+        <v-layout row wrap align-center justify-center id="partners-pic" style="position: relative; top: -400px;">
+          <v-flex column class="text-xs-center white--text darkpurpleBg" id="head-box1" xs8 style="min-width: 1140px; height: 400px;">
+            <div class="thank-you">THANK YOU TO OUR PARTNERS AND SUPPORTERS</div>
+            <div class="thank-you-msg">Thank you for sharing our vision and believing in the<br>power of youth who are connected and empowered.</div>
+            <v-btn round style="width: 500px; color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('setup')">Inspired by our work? Consider supporting us today.</v-btn>
+          </v-flex>
+        </v-layout>
+
+        <v-layout row wrap>
+          <v-flex column class="text-xs-center" pa-3 xs4>
+            <img src="../assets/png/headers/socialmediahub.png" width="120%" id="socialmediahub">
+          </v-flex>
+        </v-layout>
       </v-container>
 
     </div>
@@ -118,6 +167,11 @@
     min-height: 250px;
     opacity: 0.7;
     padding: 30px;
+  }
+  #head-box1 {
+    padding: 30px;
+    padding-top: 40px;
+    opacity: 0.6;
   }
   #spacer{
     width: 100%;
@@ -186,6 +240,63 @@
     position: relative;
     right: 10%;
     top: -700px;
+  }
+  #points_store {
+    position: relative;
+    top: -500px;
+    left: 410px;
+  }
+  #more_than_volunteering {
+    position: relative;
+    top: -400px;
+    left: 20px;
+  }
+  .volunteer_description {
+    text-align: left;
+    position: relative;
+    top: -400px;
+    left: 20px;
+    font-size: 17px;
+  }
+  .mayor_name {
+    color: #4f2e86;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    position: relative;
+    top: -400px;
+    left: 250px;
+  }
+  .mayor_title {
+    font-size: 22px;
+    position: relative;
+    top: -420px;
+    left: 250px;
+  }
+  .video1 {
+    position: relative;
+    left: 280px;
+    top: -370px;
+  }
+  #partners-pic {
+    min-width: 100%;
+    background-image: url("../assets/jpg/mayorANDcouncil.jpg");
+    background-size: cover;
+  }
+  .thank-you {
+    font-size: 45px;
+    font-weight: bold;
+    padding-top: 40px;
+  }
+  .thank-you-msg {
+    font-size: 19px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #socialmediahub {
+    position: relative;
+    top: -350px;
   }
 </style>
 
