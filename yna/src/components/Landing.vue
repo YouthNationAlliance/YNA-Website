@@ -107,7 +107,7 @@
           <v-flex column class="text-xs-center" pa-3 xs4>
             <img src="../assets/png/pointsstore.png" width="250%" id="points_store">
           </v-flex>
-          v-flex column class="text-xs-center" pa-3 xs4>
+          <v-flex column class="text-xs-center" pa-3 xs4>
 
           </v-flex>
         </v-layout>
@@ -141,7 +141,7 @@
           <v-flex column class="text-xs-center white--text darkpurpleBg" id="head-box1" xs8 style="min-width: 1140px; height: 400px;">
             <div class="thank-you">THANK YOU TO OUR PARTNERS AND SUPPORTERS</div>
             <div class="thank-you-msg">Thank you for sharing our vision and believing in the<br>power of youth who are connected and empowered.</div>
-            <v-btn round style="width: 500px; color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('setup')">Inspired by our work? Consider supporting us today.</v-btn>
+            <v-btn round style="width: 500px; color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('')">Inspired by our work? Consider supporting us today.</v-btn>
           </v-flex>
         </v-layout>
 
