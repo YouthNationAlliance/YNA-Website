@@ -10,6 +10,9 @@ const fb = require('./firebaseConfig.js')
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'dayspan-vuetify/dist/lib/dayspan-vuetify.min.css'
+import Icon from 'vue-awesome/icons'
+Vue.component('icon', Icon)
+
 
 Vue.use(Vuetify);
 

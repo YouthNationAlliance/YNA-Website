@@ -147,11 +147,67 @@
 
         <v-layout row wrap>
           <v-flex column class="text-xs-center" pa-3 xs4>
-            <img src="../assets/png/headers/socialmediahub.png" width="120%" id="socialmediahub">
+            <img src="../assets/png/headers/socialmediahub.png" width="150%" id="socialmediahub">
+            <img src="../assets/png/icons/iglogo.png" width="20%" id="iglogo">
+            <img src="../assets/png/icons/fblogo.png" width="18%" id="fblogo">
+            <img src="../assets/png/icons/wechatlogo.png" width="20%" id="wechatlogo">
+            <img src="../assets/png/icons/emaillogo.png" width="20%" id="emaillogo">
+          </v-flex>
+          <v-flex column class="text-xs-center" pa-3 xs4>
+            <p class="ig"><b>@teamyna</b></p>
+            <p class="fb"><b>@teamyna</b></p>
+            <p class="wechat"><b>yna official</b></p>
+            <p class="email"><b>teamyna@ynalliance.ca</b></p>
           </v-flex>
         </v-layout>
-      </v-container>
 
+        <v-flex class="text-xs-left doodle4">
+          <img src="../assets/png/doodles/doodles3.png" width="45%" id="doodle5">
+        </v-flex>
+
+        <v-flex column class="text-xs-center" pa-3 xs4>
+          <video width="520" height="300" controls class="video2">
+            <source src="vlogs.mp4" type="video/mp4">
+            <source src="vlogs.ogg" type="video/ogg">
+            Your browser does not support the video tag. :(
+          </video>
+        </v-flex>
+
+        <div id="spacer_footer" class="purpleBg">
+        <img src="../assets/logo-landing.png" id="footer_logo">
+        <small class="yna" style="position: relative; left: -200px; top: 20px; font-size: 14px; color: white;">
+          &copy; 2018 Youth Nation Alliance
+        </small>
+        <p class="footer_header" style="position: relative; left: 100px; bottom: 75px;">
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        General
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Organizations
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Volunteers
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Contact Us
+        </p>
+        <p id="general_text" class="footer_text" style="position: relative; ">
+          Home &emsp;&emsp; Volunteers<br>
+          About &emsp;&emsp; Organizations<br>
+          Events &emsp;&emsp;Contact<br>
+        </p>
+        <p id="organizations_text" class="footer_text">
+          Looking for volunteers for your<br>next event? <u>Partner with us</u>
+        </p>
+        <p id="volunteers_text" class="footer_text">
+          Interested in getting started?<br> <u>Register now</u>
+        </p>
+        <p id="contact_text" class="footer_text">
+          <icon name="envelope"></icon>
+          &emsp;teamyna@alliance.ca
+          <br>
+          <icon name="phone"></icon>
+          &emsp;416 846 9402
+        </p>
+        </div>
+      </v-container>
     </div>
   </div>
 </template>
@@ -165,7 +221,7 @@
   }
   #head-box{
     min-height: 250px;
-    opacity: 0.7;
+    opacity: 0.6;
     padding: 30px;
   }
   #head-box1 {
@@ -179,6 +235,13 @@
   }
   #spacer2{
     margin-right: 25%;
+  }
+  #spacer_footer {
+    position: relative;
+    top: -700px;
+    right: 200px;
+    width: 1500px;
+    height: 150px;
   }
   #joinUs{
     width: 50%;
@@ -241,6 +304,14 @@
     right: 10%;
     top: -700px;
   }
+  .doodle4 {
+    z-index: -1;
+  }
+  #doodle5 {
+    position: relative;
+    left: 170px;
+    top: -400px;
+  }
   #points_store {
     position: relative;
     top: -500px;
@@ -278,6 +349,11 @@
     left: 280px;
     top: -370px;
   }
+  .video2 {
+    position: relative;
+    left: 700px;
+    top: -820px;
+  }
   #partners-pic {
     min-width: 100%;
     background-image: url("../assets/jpg/mayorANDcouncil.jpg");
@@ -298,11 +374,92 @@
     position: relative;
     top: -350px;
   }
+  #iglogo {
+    position: relative;
+    top: -355px;
+    right: 30px;
+  }
+  #fblogo {
+    position: relative;
+    top: -240px;
+    right: 95px;
+  }
+  #wechatlogo {
+    position: relative;
+    top: -145px;
+    right: 160px;
+  }
+  #emaillogo {
+    position: relative;
+    top: -35px;
+    right: 227px;
+  }
+  .ig {
+    position: relative;
+    top: -175px;
+    right: 380px;
+    font-size: 22px;
+  }
+  .fb {
+    position: relative;
+    top: -120px;
+    right: 380px;
+    font-size: 22px;
+  }
+  .wechat {
+    position: relative;
+    top: -65px;
+    right: 380px;
+    font-size: 22px;
+  }
+  .email {
+    position: relative;
+    top: -10px;
+    right: 315px;
+    font-size: 22px;
+  }
+  .footer_header {
+    color: white;
+    font-weight: bold;
+  }
+  .footer_text {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  #general_text {
+    position: relative;
+    top: -90px;
+    left: 360px;
+  }
+  #organizations_text {
+    position: relative;
+    top: -170px;
+    left: 620px;
+  }
+  #volunteers_text {
+    position: relative;
+    top: -230px;
+    left: 910px;
+  }
+  #contact_text {
+    position: relative;
+    top: -285px;
+    left: 1210px;
+  }
+  #footer_logo {
+    padding-left: 70px;
+  }
 </style>
 
 <script>
+import Icon from 'vue-awesome/components/Icon'
+
 export default {
-    data() {
+    components: {
+      Icon
+    },
+    data () {
         return {
             images: {
             }
