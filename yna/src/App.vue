@@ -16,7 +16,7 @@
       <template v-else>
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
-        <Login v-else-if="page === 'login'" @newPage="changePage"/>
+        <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'"/>
         <About v-else-if="page === 'about'"/>
       </template>
@@ -97,6 +97,9 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
+    }
+    updateStatus(status) {
+      this.status = status;
     }
   }
 }
