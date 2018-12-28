@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Dashboard v-if="loggedIn"/>
+        <Sidebar/>
         <!-- <Connect/> -->
       </template>
       <template v-else>
@@ -60,7 +60,7 @@ import Navbar from './components/Navbar'
 import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
-import Dashboard from './components/Dashboard'
+import Sidebar from './components/Sidebar'
 
 export default {
   name: 'App',
@@ -76,7 +76,7 @@ export default {
     About,
     Home,
     Settings,
-    Dashboard
+    Sidebar
   },
   data () {
     return {
