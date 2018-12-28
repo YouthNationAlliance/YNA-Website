@@ -6,7 +6,7 @@
         <v-flex column class="text-xs-center white--text purpleBg" id="head-box" xs8 style="min-width: 100px;">
           <h1>ARE YOU READY TO</h1>
           <h3>IGNITE YOUR PASSION FOR VOLUNTEERING?</h3>
-          <v-btn round style="color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('setup')"><h2>JOIN US TODAY</h2></v-btn>
+          <v-btn round style="color: #4f2e86; background-color: white;" id="joinUs" @click="changePage('setup')"><h3>JOIN US TODAY</h3></v-btn>
         </v-flex>
       </v-layout>
 
