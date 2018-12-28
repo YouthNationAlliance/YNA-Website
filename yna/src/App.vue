@@ -2,14 +2,15 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Navbar @newPage="changePage"/>
+        <Navbar v-if="!loggedIn" @newPage="changePage"/>
         <Dashboard v-if="loggedIn"/>
-        <Landing v-if="landingPage === 'home'"  @newPage="changePage"/>
-        <Signout v-else-if="landingPage === 'signout'"/>
-        <Maps v-else-if="landingPage === 'maps'"/>
-        <Qualifications v-else-if="landingPage === 'qualifications'"/>
-        <Setup v-else-if="landingPage === 'setup'"/>
-        <Settings v-else-if="landingPage === 'settings'"/>
+        <Landing v-if="page === 'home'" @newPage="changePage"/>
+        <Signout v-else-if="page === 'signout'"/>
+        <Maps v-else-if="page === 'maps'"/>
+        <Qualifications v-else-if="page === 'qualifications'"/>
+        <Setup v-else-if="page === 'setup'"/>
+        <Settings v-else-if="page === 'settings'"/>
+        <Events v-else-if="page === 'events'"/>
         <!-- <Connect/> -->
       </template>
       <template v-else>
@@ -17,13 +18,10 @@
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'"/>
+        <About v-else-if="page === 'about'"/>
       </template>
-      <!-- <Calendar/>
+      <Footer/>
       <Connect/>
-      <Dashboard/>
-      <Qualifications/>
-      <Maps/>
-       -->
     </v-content>
   </v-app>
 </template>
@@ -35,6 +33,10 @@
   }
   .purpleFg{
     color: #4f2e86;
+  }
+  .darkpurpleBg {
+    background-color: #4f2e86;
+    /* opacity: 0.1; */
   }
   h1{
     font-family: 'Raleway', sans-serif;
