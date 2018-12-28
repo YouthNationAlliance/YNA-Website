@@ -82,7 +82,7 @@
         dialog: false,
         items: [
          {
-           avatar: 'https://media.licdn.com/dms/image/C4D0BAQEr34FLB9AeKQ/company-logo_100_100/0?e=1545264000&v=beta&t=z0RTexBgTZYF7IzRxCUhAi5oGMzqCimcOzNv86pq1as',
+           avatar: 'https://pbs.twimg.com/profile_images/903700322249527297/80B8Ghyw_400x400.jpg',
            title: 'Visit us online',
            subtitle: "www.ynalliance.ca"
          },

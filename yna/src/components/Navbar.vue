@@ -10,7 +10,7 @@
         <span class="mr-2" >Home</span>
       </v-btn>
       <v-btn flat @click="changePage('about')">
-        <span class="mr-2">About</span>
+        <span class="mr-2">About Us</span>
       </v-btn>
       <v-btn flat @click="changePage('events')">
         <span class="mr-2">Events</span>
@@ -20,10 +20,16 @@
         <v-menu offset-y>
         <v-btn slot="activator" flat @click="changePage('volunteers')">
             Volunteers
-          </v-btn>
+        </v-btn>
           <v-list>
-            <v-list-tile v-for="(item, index) in items" :key="index" @click="">
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            <v-list-tile @click="changePage('before_you_begin')">
+              <v-list-tile-title>{{"Before You Begin"}}</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile @click="changePage('getting_started')">
+              <v-list-tile-title>{{"Getting Started"}}</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile @click="changePage('volunteer_faqs')">
+              <v-list-tile-title>{{"Volunteer FAQs"}}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -35,9 +41,9 @@
             Organizations
           </v-btn>
           <v-list>
-            <v-list-tile v-for="(item, index) in items1" :key="index" @click="">
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile>
+          <v-list-tile @click="changePage('supporters')">
+            <v-list-tile-title>{{"Supporters and Partners"}}</v-list-tile-title>
+          </v-list-tile>
           </v-list>
         </v-menu>
       </div>
@@ -68,7 +74,7 @@
         ],
         items1: [
         { title: 'Supporters and Partners'}
-        ]
+        ],
       }
     },
     mounted: function() {
