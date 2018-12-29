@@ -52,7 +52,6 @@
           <v-layout justify-center>
             <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
           </v-layout>
-
         </v-form>
       </v-flex>
     </v-layout>
@@ -114,7 +113,6 @@
     }),
     methods: {
       signup() {
-
         var ref = this;
 
         // console.log(user: this.user, email: this.email);
@@ -128,13 +126,16 @@
           birthday: document.getElementById('birthday').value,
           school: document.getElementById('school').value
         }).then(function(res) {
-          //console.log(res.data);
-
+          // console.log(res.data);
           if(res.data === 'success') {
             ref.$emit('login', true);
+            alert('yeet');
+            // console.log("yeet");
           } else {
             ref.$emit('login', false);
-          }
+            alert('cust');
+            // console.log("cust");
+            }
         })
       },
       validateEmail() {
