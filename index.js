@@ -53,7 +53,6 @@ express()
   })
   .post('/signup', (req, res) => {
     // Signup
-
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
         var newUser = firebase.database().ref('users').child(firebase.auth().currentUser.uid);
@@ -82,7 +81,21 @@ express()
       console.log(errorMessage);
       res.send("error");
     });
-
+  })
+  .post('/logout', (req, res) => {
+    // Logout
+    firebase.auth().signOut().then(function(user) {
+      if(user){
+        console.log("logout success");
+        res.send("success");
+      }
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("logout failure:");
+      console.log(errorMessage);
+      res.send("error");
+    });
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
