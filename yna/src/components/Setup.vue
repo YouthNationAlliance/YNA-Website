@@ -69,11 +69,10 @@
     name: 'signup-form',
     data: () => ({
       valid: false,
-      user:'',
+      email: '',
       password:'',
       first: '',
       last: '',
-      email: '',
       phone:'',
       birthday:'',
       school: '',

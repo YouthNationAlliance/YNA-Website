@@ -1,19 +1,9 @@
 <template>
-  <v-navigation-drawer
-    :mini-variant.sync="mini"
-    v-model="drawer"
-    clipped
-    dark
-  >
+  <v-navigation-drawer :mini-variant.sync="mini" v-model="drawer" clipped dark>
     <v-toolbar flat class="transparent">
       <v-list class="pa-0">
-        <v-list-tile
-        v-for="item in info"
-        :key="item.Username"
-        avatar>
-          <v-list-tile-avatar
-          color="white"
-          >
+        <v-list-tile v-for="item in info" :key="item.Username"avatar>
+          <v-list-tile-avatar color="white">
             <v-icon color="purple darken-4">face</v-icon>
           </v-list-tile-avatar>
 
@@ -22,11 +12,7 @@
           </v-list-tile-content>
 
           <v-list-tile-action>
-            <v-btn
-              icon
-              @click.stop="mini = !mini"
-              color="white"
-            >
+            <v-btn icon @click.stop="mini = !mini" color="white">
               <v-icon color="purple darken-4">chevron_left</v-icon>
             </v-btn>
           </v-list-tile-action>
@@ -37,11 +23,7 @@
     <v-list class="pt-0" dense>
       <v-divider></v-divider>
 
-      <v-list-tile
-        v-for="item in items"
-        :key="item.title"
-        @click=""
-      >
+      <v-list-tile v-for="item in items" :key="item.title" @click="">
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-tile-action>
