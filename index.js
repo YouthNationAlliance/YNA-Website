@@ -64,6 +64,7 @@ express()
           phone_number: req.body.phone,
           birthday: req.body.birthday,
           school: req.body.school
+        }).then(function() {
           console.log("signup success");
           res.send("success");
         }).catch(function(error){

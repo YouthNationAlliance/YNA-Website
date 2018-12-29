@@ -92,7 +92,7 @@ export default {
     },
     updateStatus(status) {
       this.loggedIn = status;
-      console.log(status);
+      // console.log(status);
     }
   }
 }

@@ -30,10 +30,10 @@
 
           <v-layout row wrap>
             <v-flex column xs6>
-              <v-text-field id="first" v-model="first" label="First Name" required></v-text-field>
+              <v-text-field id="first" v-model="first" label="First Name" :rules="firstNameRules" required></v-text-field>
             </v-flex>
             <v-flex column xs6>
-              <v-text-field id="last" v-model="last" label="Last Name" required></v-text-field>
+              <v-text-field id="last" v-model="last" label="Last Name" :rules="lastNameRules" required></v-text-field>
             </v-flex>
           </v-layout>
 
@@ -47,12 +47,11 @@
           </v-layout>
 
           <v-text-field id="email" v-model="email" :rules="emailRules" label="Email" required></v-text-field>
-          <v-text-field id="school" v-model="school" label="Current School" required></v-text-field>
+          <v-text-field id="school" v-model="school" label="Current School" :rules="schoolRules" required></v-text-field>
 
           <v-layout justify-center>
             <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
           </v-layout>
-
         </v-form>
       </v-flex>
     </v-layout>
@@ -99,12 +98,21 @@
       ],
       phoneRules: [
         v => !!v || 'Phone number is required',
-        v => /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v) || 'Phone number must be valid'
+        v => v.length === 10 || 'Phone number must be valid',
+        v => !isNaN(v) || 'Phone number must be valid'
+      ],
+      schoolRules: [
+        v => !! v || 'Current school is required'
+      ],
+      firstNameRules: [
+        v => !! v || 'First name is required'
+      ],
+      lastNameRules: [
+        v => !! v || 'Last name is required'
       ]
     }),
     methods: {
       signup() {
-
         var ref = this;
 
         // console.log(user: this.user, email: this.email);
@@ -118,13 +126,16 @@
           birthday: document.getElementById('birthday').value,
           school: document.getElementById('school').value
         }).then(function(res) {
-          //console.log(res.data);
-
+          // console.log(res.data);
           if(res.data === 'success') {
-            this.$emit('login', true);
+            ref.$emit('login', true);
+            alert('yeet');
+            // console.log("yeet");
           } else {
-            this.$emit('login', false);
-          }
+            ref.$emit('login', false);
+            alert('cust');
+            // console.log("cust");
+            }
         })
       },
       validateEmail() {
