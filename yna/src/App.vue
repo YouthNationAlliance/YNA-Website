@@ -4,6 +4,7 @@
       <template v-if="loggedIn">
         <Sidebar/>
         <!-- <Connect/> -->
+        <Dashboard v-if="page === 'dashboard'"/>
       </template>
       <template v-else>
         <Navbar @newPage="changePage"/>
@@ -49,6 +50,8 @@
 </style>
 
 <script>
+import axios from 'axios'
+
 import Connect from './components/Connect'
 import Login from './components/Login'
 import Setup from './components/Setup'
@@ -61,6 +64,7 @@ import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
+import Dashboard from './components/Dashboard'
 
 export default {
   name: 'App',
@@ -76,9 +80,16 @@ export default {
     About,
     Home,
     Settings,
-    Sidebar
+    Sidebar,
+    Dashboard
   },
   data () {
+    email: '',
+    first: '',
+    last: '',
+    phone:'',
+    birthday:'',
+    school: '',
     return {
       loggedIn: false,
       page: "home"
@@ -93,6 +104,17 @@ export default {
     updateStatus(status) {
       this.loggedIn = status;
       // console.log(status);
+    },
+    getUserInfo(){
+      axios.post('/getUserInfo').then(function(res){
+        console.log(res.data);
+        this.email = res.data.email;
+        this.first = res.data.first;
+        this.last = res.data.last;
+        this.phone = res.data.phone;
+        this.birthday = res.data.birthday;
+        this.school = res.data.school;
+      });
     }
   }
 }
