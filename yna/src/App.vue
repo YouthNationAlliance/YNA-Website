@@ -10,6 +10,7 @@
         <Calendar v-else-if="page === 'calendar'"/>
         <Chat v-else-if="page === 'chat'"/>
         <!-- <Connect/> -->
+      </template>
       </span>
       <span v-else>
         <Dashboard v-if="page === 'dashboard'"/>
