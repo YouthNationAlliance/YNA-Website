@@ -1,17 +1,17 @@
 <template>
   <v-app>
     <v-content>
-      <template v-if="loggedIn">
+      <span v-if="loggedIn">
         <Sidebar/>
         <!-- <Connect/> -->
-      </template>
-      <template v-else>
+      </span>
+      <span v-else>
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
-      </template>
+      </span>
       <Footer/>
       <Connect/>
     </v-content>
@@ -61,6 +61,7 @@ import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
@@ -76,7 +77,8 @@ export default {
     About,
     Home,
     Settings,
-    Sidebar
+    Sidebar,
+    Footer
   },
   data () {
     return {
