@@ -95,13 +95,13 @@ express()
         birthday: snapshot.val().birthday,
         school: snapshot.val().school
       });
-    }).catch(function(error)){
+    }).catch(function(error){
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("user data retrieval failure");
       console.log(errorMessage);
       res.send("error");
-    };
+    });
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
