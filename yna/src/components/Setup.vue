@@ -99,7 +99,8 @@
       ],
       phoneRules: [
         v => !!v || 'Phone number is required',
-        v => /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v) || 'Phone number must be valid'
+        v => v.length === 10 || 'Phone number must be valid',
+        v => !isNaN(v) || 'Phone number must be valid'
       ]
     }),
     methods: {
@@ -121,9 +122,9 @@
           //console.log(res.data);
 
           if(res.data === 'success') {
-            this.$emit('login', true);
+            ref.$emit('login', true);
           } else {
-            this.$emit('login', false);
+            ref.$emit('login', false);
           }
         })
       },
