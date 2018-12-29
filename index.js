@@ -83,6 +83,19 @@ express()
       res.send("error");
     });
   })
+  .post('/logout', (req, res) => {
+    // Logout
+    firebase.auth().signOut().then(function(user) {
+      if(user){
+        console.log("logout success");
+        res.send("success");
+      }
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("logout failure:");
+    });
+  })
   .post('/getUserInfo', (req, res) => {
     //Returns the user's information
     var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);

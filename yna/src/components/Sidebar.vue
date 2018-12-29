@@ -20,19 +20,48 @@
       </v-list>
     </v-toolbar>
 
-    <v-list class="pt-0" dense>
-      <v-divider></v-divider>
-
-      <v-list-tile v-for="item in items" :key="item.title" @click="">
-        <v-list-tile-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-
-        <v-list-tile-content>
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
+      <v-list>
+          <v-list-tile @click="changePage('settings')">
+            <v-list-tile-action>
+              <v-icon>contacts</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{"Account Details"}}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        <v-list-tile @click="changePage('qualifications')">
+          <v-list-tile-action>
+            <v-icon>subtitles</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Qualifications"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="changePage('maps')">
+          <v-list-tile-action>
+            <v-icon>map</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Maps"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="changePage('calendar')">
+          <v-list-tile-action>
+            <v-icon>event</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Calendar"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="changePage('chat')">
+          <v-list-tile-action>
+            <v-icon>chat</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Chat"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
   </v-navigation-drawer>
 </template>
 

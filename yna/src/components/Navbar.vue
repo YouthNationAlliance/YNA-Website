@@ -26,9 +26,9 @@
 
       <div class="text-xs-center" id="volunteers">
         <v-menu offset-y color="white">
-        <v-btn slot="activator" flat @click="changePage('volunteers')" color="white" style="font-weight: bold;">
-            Volunteers
-        </v-btn>
+          <v-btn slot="activator" flat @click="changePage('volunteers')" color="white" style="font-weight: bold;">
+              Volunteers
+          </v-btn>
           <v-list style="color: white; font-weight: bold; background-color: #4f2e86;">
             <v-list-tile @click="changePage('before_you_begin')">
               <v-list-tile-title>{{"Before You Begin"}}</v-list-tile-title>
@@ -45,7 +45,7 @@
 
       <div class="text-xs-center" id="organizations">
         <v-menu offset-y>
-        <v-btn slot="activator" flat @click="changePage('organizations')" color="white" style="font-weight: bold;">
+          <v-btn slot="activator" flat @click="changePage('organizations')" color="white" style="font-weight: bold;">
             Organizations
           </v-btn>
           <v-list style="color: white; font-weight: bold; background-color: #4f2e86;">
