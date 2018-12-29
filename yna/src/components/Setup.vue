@@ -30,10 +30,10 @@
 
           <v-layout row wrap>
             <v-flex column xs6>
-              <v-text-field id="first" v-model="first" label="First Name" required></v-text-field>
+              <v-text-field id="first" v-model="first" label="First Name" :rules="firstNameRules" required></v-text-field>
             </v-flex>
             <v-flex column xs6>
-              <v-text-field id="last" v-model="last" label="Last Name" required></v-text-field>
+              <v-text-field id="last" v-model="last" label="Last Name" :rules="lastNameRules" required></v-text-field>
             </v-flex>
           </v-layout>
 
@@ -47,7 +47,7 @@
           </v-layout>
 
           <v-text-field id="email" v-model="email" :rules="emailRules" label="Email" required></v-text-field>
-          <v-text-field id="school" v-model="school" label="Current School" required></v-text-field>
+          <v-text-field id="school" v-model="school" label="Current School" :rules="schoolRules" required></v-text-field>
 
           <v-layout justify-center>
             <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
@@ -101,6 +101,15 @@
         v => !!v || 'Phone number is required',
         v => v.length === 10 || 'Phone number must be valid',
         v => !isNaN(v) || 'Phone number must be valid'
+      ],
+      schoolRules: [
+        v => !! v || 'Current school is required'
+      ],
+      firstNameRules: [
+        v => !! v || 'First name is required'
+      ],
+      lastNameRules: [
+        v => !! v || 'Last name is required'
       ]
     }),
     methods: {
