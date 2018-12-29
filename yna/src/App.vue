@@ -92,9 +92,9 @@ export default {
     Home,
     Settings,
     Sidebar,
+    Footer,
     Chat,
     Logout,
-    Footer,
     Dashboard
   },
   data () {
@@ -102,12 +102,12 @@ export default {
       loggedIn: true,
       rmsb: false,
       page: "home",
-      email: "",
-      first: "",
-      last: "",
-      phone: "",
-      birthday: "",
-      school: "",
+      email: '',
+      first: '',
+      last: '',
+      phone: '',
+      birthday: '',
+      school: ''
     }
   },
   mounted: function() {
