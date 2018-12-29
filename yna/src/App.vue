@@ -82,19 +82,19 @@ export default {
     Home,
     Settings,
     Sidebar,
-    Footer
+    Footer,
     Dashboard
   },
   data () {
-    email: '',
-    first: '',
-    last: '',
-    phone:'',
-    birthday:'',
-    school: '',
     return {
       loggedIn: false,
-      page: "home"
+      page: "home",
+      email: '',
+      first: '',
+      last: '',
+      phone: '',
+      birthday: '',
+      school: ''
     }
   },
   mounted: function() {
