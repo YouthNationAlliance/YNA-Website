@@ -10,6 +10,7 @@
         <Calendar v-else-if="page === 'calendar'"/>
         <Chat v-else-if="page === 'chat'"/>
         <!-- <Connect/> -->
+      </template>
       </span>
       <span v-else>
         <Dashboard v-if="page === 'dashboard'"/>
@@ -70,13 +71,10 @@ import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
-<<<<<<< HEAD
 import Chat from './components/Chat'
 import Logout from './components/Logout'
-=======
 import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
->>>>>>> e5d49cfa084becc918ce5758e031b88be071d1e5
 
 export default {
   name: 'App',
@@ -93,24 +91,21 @@ export default {
     Home,
     Settings,
     Sidebar,
-<<<<<<< HEAD
     Chat,
-    Logout
-=======
-    Footer
+    Logout,
+    Footer,
     Dashboard
->>>>>>> e5d49cfa084becc918ce5758e031b88be071d1e5
   },
   data () {
-    email: '',
-    first: '',
-    last: '',
-    phone:'',
-    birthday:'',
-    school: '',
     return {
       loggedIn: true,
-      page: "home"
+      page: "home",
+      email: "",
+      first: "",
+      last: "",
+      phone: "",
+      birthday: "",
+      school: "",
     }
   },
   mounted: function() {
