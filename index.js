@@ -83,7 +83,6 @@ express()
       res.send("error");
     });
   })
-<<<<<<< HEAD
   .post('/logout', (req, res) => {
     // Logout
     firebase.auth().signOut().then(function(user) {
@@ -95,7 +94,8 @@ express()
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("logout failure:");
-=======
+    });
+  })
   .post('/getUserInfo', (req, res) => {
     //Returns the user's information
     var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
@@ -112,7 +112,6 @@ express()
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("user data retrieval failure");
->>>>>>> e5d49cfa084becc918ce5758e031b88be071d1e5
       console.log(errorMessage);
       res.send("error");
     });
