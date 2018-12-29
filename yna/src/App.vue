@@ -2,7 +2,13 @@
   <v-app>
     <v-content>
       <template v-if="loggedIn">
-        <Sidebar/>
+        <Sidebar @newPage="changePage"/>
+        <Landing v-if="page === 'home'"/>
+        <Settings v-else-if="page === 'settings'"/>
+        <Qualifications v-else-if="page === 'qualifications'"/>
+        <Maps v-else-if="page === 'maps'"/>
+        <Calendar v-else-if="page === 'calendar'"/>
+        <Chat v-else-if="page === 'chat'"/>
         <!-- <Connect/> -->
       </template>
       <template v-else>
@@ -13,7 +19,7 @@
         <About v-else-if="page === 'about'"/>
       </template>
       <Footer/>
-      <Connect/>
+      <!-- <Connect/> -->
     </v-content>
   </v-app>
 </template>
@@ -61,6 +67,8 @@ import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
+import Chat from './components/Chat'
+import Logout from './components/Logout'
 
 export default {
   name: 'App',
@@ -76,11 +84,13 @@ export default {
     About,
     Home,
     Settings,
-    Sidebar
+    Sidebar,
+    Chat,
+    Logout
   },
   data () {
     return {
-      loggedIn: false,
+      loggedIn: true,
       page: "home"
     }
   },
@@ -89,6 +99,7 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
+      alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;

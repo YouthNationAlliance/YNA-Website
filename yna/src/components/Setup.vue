@@ -98,8 +98,7 @@
       ],
       phoneRules: [
         v => !!v || 'Phone number is required',
-        v => v.length === 10 || 'Phone number must be valid',
-        v => !isNaN(v) || 'Phone number must be valid'
+        v => /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v) || 'Phone number must be valid. Use spaces/hypens.'
       ]
     }),
     methods: {
@@ -117,7 +116,7 @@
           birthday: document.getElementById('birthday').value,
           school: document.getElementById('school').value
         }).then(function(res) {
-          // console.log(res.data);
+          console.log(res.data);
           if(res.data === 'success') {
             ref.$emit('login', true);
             alert('yeet');
