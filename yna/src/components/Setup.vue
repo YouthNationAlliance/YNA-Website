@@ -42,7 +42,7 @@
               <v-text-field id="phone" v-model="number" :rules="phoneRules" label="Mobile Number" required></v-text-field>
             </v-flex>
             <v-flex column xs 6>
-              <v-text-field id="bitrhday" v-model="birthday" label="Birth Date" required></v-text-field>
+              <v-text-field id="birthday" v-model="birthday" label="Birth Date" required></v-text-field>
             </v-flex>
           </v-layout>
 
@@ -98,7 +98,8 @@
       ],
       phoneRules: [
         v => !!v || 'Phone number is required',
-        v => /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v) || 'Phone number must be valid'
+        v => v.length === 10 || 'Phone number must be valid',
+        v => !isNaN(v) || 'Phone number must be valid'
       ]
     }),
     methods: {
@@ -125,7 +126,7 @@
             ref.$emit('login', false);
             alert('cust');
             // console.log("cust");
-          }
+            }
         })
       },
       validateEmail() {
