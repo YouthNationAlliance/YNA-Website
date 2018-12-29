@@ -5,13 +5,6 @@
       width="600"
       scrollable
     >
-      <v-btn
-        slot="activator"
-        color="red lighten-2"
-        dark
-      >
-        Click Me
-      </v-btn>
 
       <v-card>
         <v-card-title

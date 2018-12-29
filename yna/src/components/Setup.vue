@@ -30,10 +30,10 @@
 
           <v-layout row wrap>
             <v-flex column xs6>
-              <v-text-field id="first" v-model="first" label="First Name" required></v-text-field>
+              <v-text-field id="first" v-model="first" label="First Name" :rules="firstNameRules" required></v-text-field>
             </v-flex>
             <v-flex column xs6>
-              <v-text-field id="last" v-model="last" label="Last Name" required></v-text-field>
+              <v-text-field id="last" v-model="last" label="Last Name" :rules="lastNameRules" required></v-text-field>
             </v-flex>
           </v-layout>
 
@@ -47,7 +47,7 @@
           </v-layout>
 
           <v-text-field id="email" v-model="email" :rules="emailRules" label="Email" required></v-text-field>
-          <v-text-field id="school" v-model="school" label="Current School" required></v-text-field>
+          <v-text-field id="school" v-model="school" label="Current School" :rules="schoolRules" required></v-text-field>
 
           <v-layout justify-center>
             <v-btn :disabled="!valid" @click="signup" class="purple white--text">Register!</v-btn>
@@ -69,11 +69,10 @@
     name: 'signup-form',
     data: () => ({
       valid: false,
-      user:'',
+      email: '',
       password:'',
       first: '',
       last: '',
-      email: '',
       phone:'',
       birthday:'',
       school: '',
@@ -106,7 +105,6 @@
         var ref = this;
 
         // console.log(user: this.user, email: this.email);
-        alert('Processing!');
         axios.post('/signup', {
           email: document.getElementById('email').value,
           password: document.getElementById('password').value,
@@ -119,12 +117,8 @@
           console.log(res.data);
           if(res.data === 'success') {
             ref.$emit('login', true);
-            alert('yeet');
-            // console.log("yeet");
           } else {
             ref.$emit('login', false);
-            alert('cust');
-            // console.log("cust");
             }
         })
       },

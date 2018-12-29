@@ -173,40 +173,6 @@
           </video>
         </v-flex>
 
-        <div id="spacer_footer" class="purpleBg">
-        <img src="../assets/logo-landing.png" id="footer_logo">
-        <small class="yna" style="position: relative; left: -200px; top: 20px; font-size: 14px; color: white;">
-          &copy; 2018 Youth Nation Alliance
-        </small>
-        <p class="footer_header" style="position: relative; left: 100px; bottom: 75px;">
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        General
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        Organizations
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        Volunteers
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        Contact Us
-        </p>
-        <p id="general_text" class="footer_text" style="position: relative; ">
-          Home &emsp;&emsp; Volunteers<br>
-          About &emsp;&emsp; Organizations<br>
-          Events &emsp;&emsp;Contact<br>
-        </p>
-        <p id="organizations_text" class="footer_text">
-          Looking for volunteers for your<br>next event? <u>Partner with us</u>
-        </p>
-        <p id="volunteers_text" class="footer_text">
-          Interested in getting started?<br> <u>Register now</u>
-        </p>
-        <p id="contact_text" class="footer_text">
-          <icon name="envelope"></icon>
-          &emsp;teamyna@alliance.ca
-          <br>
-          <icon name="phone"></icon>
-          &emsp;416 846 9402
-        </p>
-        </div>
       </v-container>
     </div>
   </div>
@@ -239,8 +205,7 @@
   #spacer_footer {
     position: relative;
     top: -700px;
-    right: 200px;
-    width: 1500px;
+    width: 100%;
     height: 150px;
   }
   #joinUs{

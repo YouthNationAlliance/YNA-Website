@@ -14,7 +14,9 @@ import Icon from 'vue-awesome/icons'
 Vue.component('icon', Icon)
 
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  iconfont: 'fa',
+});
 
 Vue.use(DaySpanVuetify, {
   methods: {

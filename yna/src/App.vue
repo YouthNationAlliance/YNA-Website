@@ -10,14 +10,15 @@
         <Calendar v-else-if="page === 'calendar'"/>
         <Chat v-else-if="page === 'chat'"/>
         <!-- <Connect/> -->
-      </template>
-      <template v-else>
+      </span>
+      <span v-else>
+        <Dashboard v-if="page === 'dashboard'"/>
         <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
-      </template>
+      </span>
       <Footer/>
       <!-- <Connect/> -->
     </v-content>
@@ -55,6 +56,8 @@
 </style>
 
 <script>
+import axios from 'axios'
+
 import Connect from './components/Connect'
 import Login from './components/Login'
 import Setup from './components/Setup'
@@ -67,8 +70,13 @@ import Settings from './components/Settings'
 import About from './components/About'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
+<<<<<<< HEAD
 import Chat from './components/Chat'
 import Logout from './components/Logout'
+=======
+import Footer from './components/Footer'
+import Dashboard from './components/Dashboard'
+>>>>>>> e5d49cfa084becc918ce5758e031b88be071d1e5
 
 export default {
   name: 'App',
@@ -85,10 +93,21 @@ export default {
     Home,
     Settings,
     Sidebar,
+<<<<<<< HEAD
     Chat,
     Logout
+=======
+    Footer
+    Dashboard
+>>>>>>> e5d49cfa084becc918ce5758e031b88be071d1e5
   },
   data () {
+    email: '',
+    first: '',
+    last: '',
+    phone:'',
+    birthday:'',
+    school: '',
     return {
       loggedIn: true,
       page: "home"
@@ -104,6 +123,17 @@ export default {
     updateStatus(status) {
       this.loggedIn = status;
       // console.log(status);
+    },
+    getUserInfo(){
+      axios.post('/getUserInfo').then(function(res){
+        console.log(res.data);
+        this.email = res.data.email;
+        this.first = res.data.first;
+        this.last = res.data.last;
+        this.phone = res.data.phone;
+        this.birthday = res.data.birthday;
+        this.school = res.data.school;
+      });
     }
   }
 }
