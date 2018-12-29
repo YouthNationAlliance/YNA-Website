@@ -1,25 +1,26 @@
 <template>
   <v-app>
     <v-content>
+      <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
-        <Sidebar @newPage="changePage"/>
+        <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar"/>
         <Landing v-if="page === 'home'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
         <Maps v-else-if="page === 'maps'"/>
         <Calendar v-else-if="page === 'calendar'"/>
         <Chat v-else-if="page === 'chat'"/>
+        <Logout v-else-if="page === 'logout'"/>
         <!-- <Connect/> -->
       </template>
-      </span>
-      <span v-else>
+      <template v-else>
+        <Navbar @newPage="changePage" @login="updateStatus"/>
         <Dashboard v-if="page === 'dashboard'"/>
-        <Navbar @newPage="changePage"/>
         <Landing v-if="page === 'home'"/>
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
-      </span>
+      </template>
       <Footer/>
       <!-- <Connect/> -->
     </v-content>
@@ -99,6 +100,7 @@ export default {
   data () {
     return {
       loggedIn: true,
+      rmsb: false,
       page: "home",
       email: "",
       first: "",
@@ -113,10 +115,14 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-      alert(page);
+      // alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;
+      // console.log(status);
+    },
+    removeSidebar(status) {
+      this.rmsb = status;
       // console.log(status);
     },
     getUserInfo(){

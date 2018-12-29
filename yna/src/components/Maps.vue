@@ -2,27 +2,9 @@
 We have to create a search bar right under the maps */
 <template>
 
-  <span>
+  <span style="text-align: center;">
   <h1>Maps</h1>
-  <h2>Volunteer Opportunities</h2>
-
-  // Create the toolbar
-  <v-toolbar>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Maps</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn icon href="" target="_blank">
-        <v-icon>window</v-icon>First button
-      </v-btn>
-      <v-btn icon href="" target="_blank">
-        <v-icon>window</v-icon>Second button
-      </v-btn>
-      <v-btn icon href="" target="_blank">
-        <v-icon>window</v-icon>Third button
-      </v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
+  <h3>Volunteer Opportunities</h3>
 
   <v-layout>
     <v-flex xs12 sm6 offset-sm3>
@@ -51,7 +33,7 @@ We have to create a search bar right under the maps */
             </v-list>
           </v-menu>
         </v-card-title>
-        <v-card-text>Maps</v-card-text>
+        <v-card-text>1st Event</v-card-text>
       </v-card>
     </v-flex>
   </v-layout>
@@ -62,11 +44,11 @@ We have to create a search bar right under the maps */
   export default {
     data: () => ({
       items: [
-        { title: 'My Profile'},
-        { title: 'Login '},
-        { title: 'Register '},
-        { title: 'Calendar '},
-        { title: 'Maps' }
+        { title: '1st Event'},
+        { title: '2nd Event'},
+        { title: '3rd Event'},
+        { title: '4th Event'},
+        { title: '5th Event' }
       ]
     })
   }

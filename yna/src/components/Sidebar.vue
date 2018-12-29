@@ -21,14 +21,14 @@
     </v-toolbar>
 
       <v-list>
-          <v-list-tile @click="changePage('settings')">
-            <v-list-tile-action>
+        <v-list-tile @click="changePage('settings')">
+          <v-list-tile-action>
               <v-icon>contacts</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Account Details"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Account Details"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile @click="changePage('qualifications')">
           <v-list-tile-action>
             <v-icon>subtitles</v-icon>
@@ -61,7 +61,15 @@
             <v-list-tile-title>{{"Chat"}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-      </v-list>
+        <v-list-tile @click="changePage('logout')">
+          <v-list-tile-action>
+            <v-icon>exit_to_app</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{"Logout"}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
@@ -78,11 +86,21 @@
           { title: 'Qualifications', icon: 'subtitles' },
           { title: 'Map', icon: 'map' },
           { title: 'Calendar', icon: 'event' },
-          { title: 'Chat', icon: 'chat' }
+          { title: 'Chat', icon: 'chat' },
+          { title: 'Logout', icon: 'exit_to_app'}
         ],
         mini: true,
         right: null
       }
+    },
+    mounted: function() {
+    },
+    methods: {
+      changePage: function(page) {
+        // alert(page);
+        this.$emit('newPage', page);
+        this.$emit('rmsidebar', true);
+      },
     }
   }
 </script>
