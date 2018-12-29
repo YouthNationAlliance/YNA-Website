@@ -35,8 +35,8 @@ express()
   .get('/login', (req, res) => res.render('pages/login'))
   .get('/vue', (req, res) => res.sendFile(__dirname + '/yna/dist/index.html'))
   .post('/login', (req, res) => {
-    console.log(req.body.email);
-    console.log(req.body.password);
+    // console.log(req.body.email);
+    // console.log(req.body.password);
     // Login
     firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if (user){
@@ -53,17 +53,19 @@ express()
   })
   .post('/signup', (req, res) => {
     // Signup
-
     firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).then(function(user){
       if(user){
-        var newUser = firebase.database().ref('users').child(firebase.auth().currentUser.uid);
-        newUser.set({
+        var ref = firebase.database().ref('users')
+        var newUsr = ref.child(firebase.auth().currentUser.uid);
+        newUsr.set({
           first_name: req.body.first,
           last_name: req.body.last,
           email: req.body.email,
           phone_number: req.body.phone,
           birthday: req.body.birthday,
           school: req.body.school
+          console.log("signup success");
+          res.send("success");
         }).catch(function(error){
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -71,8 +73,6 @@ express()
           console.log(errorMessage);
           res.send("error");
         });
-        console.log("signup success");
-        res.send("success");
       }
     }).catch(function(error) {
       var errorCode = error.code;
@@ -81,7 +81,26 @@ express()
       console.log(errorMessage);
       res.send("error");
     });
-
+  })
+  .post('/getUserInfo', (req, res) => {
+    //Returns the user's information
+    var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+    ref.once('value').then(function(snapshot) {
+      res.send({
+        first: (snapshot.val().first_name) || 'Anonymous',
+        last: snapshot.val().last_name,
+        email: snapshot.val().email,
+        phone: snapshot.val().phone_number,
+        birthday: snapshot.val().birthday,
+        school: snapshot.val().school
+      });
+    }).catch(function(error)){
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("user data retrieval failure");
+      console.log(errorMessage);
+      res.send("error");
+    };
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
