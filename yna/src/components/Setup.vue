@@ -116,7 +116,6 @@
         var ref = this;
 
         // console.log(user: this.user, email: this.email);
-        alert('Processing!');
         axios.post('/signup', {
           email: document.getElementById('email').value,
           password: document.getElementById('password').value,
@@ -129,12 +128,8 @@
           // console.log(res.data);
           if(res.data === 'success') {
             ref.$emit('login', true);
-            alert('yeet');
-            // console.log("yeet");
           } else {
             ref.$emit('login', false);
-            alert('cust');
-            // console.log("cust");
             }
         })
       },
