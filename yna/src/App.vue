@@ -3,14 +3,13 @@
     <v-content>
       <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
-        <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar"/>
+        <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar" @login="updateStatus"/>
         <Landing v-if="page === 'home'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
         <Maps v-else-if="page === 'maps'"/>
         <Calendar v-else-if="page === 'calendar'"/>
         <Chat v-else-if="page === 'chat'"/>
-        <Logout v-else-if="page === 'logout'"/>
         <!-- <Connect/> -->
       </template>
       <template v-else>
@@ -20,6 +19,7 @@
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
+        <Logout v-else-if="page === 'logout'"/>
       </template>
       <Footer/>
       <!-- <Connect/> -->
