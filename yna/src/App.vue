@@ -138,7 +138,11 @@ export default {
     updateTier(userId, newTier) {
 
       //getUserInfo();
-      //userId refers to the ID of the user that requires updating.
+
+      /*
+      userId refers to the ID of the user that requires updating.
+      newTier is one of the following: 'volunteer' , 'admin' , 'coordinator'
+      */
 
       if (loggedIn) {
         axios.post('/updateTier', {
