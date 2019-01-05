@@ -127,12 +127,10 @@ express()
           tier: req.body.newTier
         });
 
-        });
       } else {
         res.sendCode(404);
       }
-    })
-
+    });
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
