@@ -19,9 +19,9 @@ firebase.initializeApp(config);
 //State change
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    console.log("user is logged in");
+    console.log("Auth state changed: logged in");
   } else {
-    console.log("user is signed out");
+    console.log("Auth state changed: signed out");
   }
 });
 
@@ -63,7 +63,8 @@ express()
           email: req.body.email,
           phone_number: req.body.phone,
           birthday: req.body.birthday,
-          school: req.body.school
+          school: req.body.school,
+          tier: 'volunteer'
         }).then(function() {
           console.log("signup success");
           res.send("success");
@@ -85,11 +86,9 @@ express()
   })
   .post('/logout', (req, res) => {
     // Logout
-    firebase.auth().signOut().then(function(user) {
-      if(user){
-        console.log("logout success");
-        res.send("success");
-      }
+    firebase.auth().signOut().then(function() {
+      console.log("logout success");
+      res.send("success");
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -115,6 +114,25 @@ express()
       console.log(errorMessage);
       res.send("error");
     });
+  })
+  .post('/updateTier', (req, res) => {
+
+    var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+    ref.once('value').then(function(snapshot) {
+      var tier = snapshot.val().tier;
+
+      if (tier === 'admin' || tier === 'coordinator') {
+
+        firebase.database().ref('users/' + req.body.userId).set({
+          tier: req.body.newTier
+        });
+
+        });
+      } else {
+        res.sendCode(404);
+      }
+    })
+
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))

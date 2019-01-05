@@ -115,11 +115,11 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-      // alert(page);
+      alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;
-      // console.log(status);
+      console.log(status);
     },
     removeSidebar(status) {
       this.rmsb = status;
@@ -135,6 +135,24 @@ export default {
         this.birthday = res.data.birthday;
         this.school = res.data.school;
       });
+    },
+    updateTier(userId, newTier) {
+
+      //getUserInfo();
+
+      /*
+      userId refers to the ID of the user that requires updating.
+      newTier is one of the following: 'volunteer' , 'admin' , 'coordinator'
+      */
+
+      if (loggedIn) {
+        axios.post('/updateTier', {
+          userId: userId,
+          newTier: newTier
+        }).then(function(res) {
+          console.log(res.body);
+        })
+      }
     }
   }
 }
