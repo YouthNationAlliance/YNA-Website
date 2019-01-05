@@ -95,7 +95,7 @@ import axios from 'axios'
           { title: 'Chat', icon: 'chat' },
           { title: 'Logout', icon: 'exit_to_app'}
         ],
-        mini: true,
+        mini: false,
         right: null
       }
     },
