@@ -1,10 +1,9 @@
 <template>
-  <v-layout wrap>
+  <v-layout wrap fill-height>
     <v-navigation-drawer :mini-variant.sync="mini" v-model="drawer" clipped dark>
-      <v-flex column class="text-xs-center" pa-3 xs4>
-        <v-toolbar flat class="transparent">
-          <v-list class="pa-0">
-            <v-list-tile v-for="item in info" :key="item.Username"avatar>
+      <v-toolbar flat class="transparent">
+        <v-list class="pa-0">
+          <v-list-tile v-for="item in info" :key="item.Username"avatar>
             <v-list-tile-avatar color="white">
               <v-icon color="purple darken-4">face</v-icon>
               </v-list-tile-avatar>
@@ -72,7 +71,6 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
-      </v-flex>
     </v-navigation-drawer>
   </v-layout>
 </template>

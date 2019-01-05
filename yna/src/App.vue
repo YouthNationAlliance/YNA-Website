@@ -4,7 +4,7 @@
       <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
         <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar" @login="updateStatus"/>
-        <Landing v-if="page === 'home'"/>
+        <!-- <Landing v-if="page === 'home'"/> -->
         <Dashboard v-if="page === 'dashboard'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
@@ -99,7 +99,7 @@ export default {
   },
   data () {
     return {
-      loggedIn: true,
+      loggedIn: false,
       rmsb: false,
       page: "home",
       email: '',
@@ -115,7 +115,7 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-      alert(page);
+      // alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;

@@ -8,7 +8,6 @@
     <v-layout row align-center justify-center>
       <v-flex xs12 sm8 md4>
         <v-form v-model="valid" align-center justify-center @submit.prevent="signup()">
-
           <v-layout row wrap>
             <v-flex column xs6>
               <v-text-field v-model="username" label="Username" required></v-text-field>

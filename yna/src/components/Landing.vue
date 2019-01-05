@@ -131,8 +131,8 @@
           </v-flex>
           <v-flex column class="text-xs-center" pa-3 xs4>
             <video width="520" height="300" controls class="video1">
-              <source src="dave_barrow.mp4" type="video/mp4">
-              <source src="dave_barrow.ogg" type="video/ogg">
+              <!-- <source src="dave_barrow.mp4" type="video/mp4"> -->
+              <!-- <source src="dave_barrow.ogg" type="video/ogg"> -->
               Your browser does not support the video tag. :(
             </video>
           </v-flex>
