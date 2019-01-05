@@ -61,7 +61,7 @@
             <v-list-tile-title>{{"Chat"}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="changePage('logout')">
+        <v-list-tile @click="logout">
           <v-list-tile-action>
             <v-icon>exit_to_app</v-icon>
           </v-list-tile-action>
@@ -96,11 +96,15 @@
     mounted: function() {
     },
     methods: {
-      changePage: function(page) {
+      changePage(page) {
         // alert(page);
         this.$emit('newPage', page);
         this.$emit('rmsidebar', true);
       },
+      logout() {
+        this.$emit('login', "false");
+        this.$emit('newPage', "logout");
+      }
     }
   }
 </script>
