@@ -19,7 +19,6 @@
         </v-list-tile>
       </v-list>
     </v-toolbar>
-
         <v-list class="pt-0" dense>
           <v-divider></v-divider>
           <v-list-tile @click="changePage('settings')">
@@ -109,8 +108,7 @@ import axios from 'axios'
         var ref = this;
         axios.post('/logout', "logout").then(function(res) {
           console.log(res.data);
-
-          if(res.data === 'success') {
+          if (res.data === 'success') {
             ref.$emit('login', false);
             ref.$emit('newPage', 'logout');
           }
