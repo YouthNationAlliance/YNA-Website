@@ -125,7 +125,7 @@ export default {
       this.rmsb = status;
       // console.log(status);
     },
-    getUserInfo(){
+    getUserInfo() {
       axios.post('/getUserInfo').then(function(res){
         console.log(res.data);
         this.email = res.data.email;
