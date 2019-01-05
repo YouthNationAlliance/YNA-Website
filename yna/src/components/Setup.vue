@@ -103,7 +103,6 @@
     methods: {
       signup() {
         var ref = this;
-
         // console.log(user: this.user, email: this.email);
         axios.post('/signup', {
           email: document.getElementById('email').value,
@@ -117,9 +116,9 @@
           console.log(res.data);
           if(res.data === 'success') {
             ref.$emit('login', true);
+            this.$emit('newPage', "dashboard");
           } else {
-            ref.$emit('login', false);
-            }
+          }
         })
       },
       validateEmail() {

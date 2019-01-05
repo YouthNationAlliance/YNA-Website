@@ -74,6 +74,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
   export default {
     data () {
       return {
@@ -102,8 +104,16 @@
         this.$emit('rmsidebar', true);
       },
       logout() {
-        this.$emit('login', "false");
-        this.$emit('newPage', "logout");
+        var ref = this;
+
+        axios.post('/logout', "logout").then(function(res) {
+          console.log(res.data);
+
+          if(res.data === 'success') {
+            ref.$emit('login', false);
+            this.$emit('newPage', "logout");
+          }
+        })
       }
     }
   }

@@ -51,19 +51,15 @@ import axios from 'axios'
 
     methods: {
       login () {
-
         var ref = this;
-
         axios.post('/login', {
           email: document.getElementById('email').value,
           password: document.getElementById('password').value
         }).then(function(res) {
-          console.log(res.data);
-
           if(res.data === 'success') {
             ref.$emit('login', true);
+            this.$emit('newPage', "dashboard");
           } else {
-            ref.$emit('login', false);
           }
         })
       },
