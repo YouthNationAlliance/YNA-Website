@@ -4,7 +4,7 @@
       <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
         <Sidebar @newPage="changePage" @login="updateStatus"/>
-        <Landing v-if="page === 'home'"/>
+        <!-- <Landing v-if="page === 'home'"/> -->
         <Dashboard v-if="page === 'dashboard'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
@@ -21,6 +21,7 @@
         <About v-else-if="page === 'about'"/>
         <Logout v-else-if="page === 'logout'"/>
       </template>
+      <!-- <Error/> -->
       <Footer/>
       <!-- <Connect/> -->
     </v-content>

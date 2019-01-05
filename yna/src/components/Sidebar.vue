@@ -19,59 +19,51 @@
         </v-list-tile>
       </v-list>
     </v-toolbar>
-        <v-list class="pt-0" dense>
-          <v-divider></v-divider>
-          <v-list-tile @click="changePage('settings')">
-            <v-list-tile-action>
-                <v-icon>contacts</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Account Details"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile @click="changePage('qualifications')">
-            <v-list-tile-action>
-              <v-icon>subtitles</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Qualifications"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile @click="changePage('maps')">
-            <v-list-tile-action>
-              <v-icon>map</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Maps"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile @click="changePage('calendar')">
-            <v-list-tile-action>
-              <v-icon>event</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Calendar"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile @click="changePage('chat')">
-            <v-list-tile-action>
-              <v-icon>chat</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Chat"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile @click="logout">
-            <v-list-tile-action>
-              <v-icon>exit_to_app</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{"Logout"}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-    </v-navigation-drawer>
-  </v-layout>
+    <v-list class="pt-0" dense>
+      <v-divider></v-divider>
+      <v-list-tile
+        v-for="item in items"
+        :key="item.title"
+        @click="changePage(item.key)"
+      >
+        <v-list-tile-action>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      <v-list-tile @click="logout">
+        <v-list-tile-action>
+          <v-icon>exit_to_app</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>{{"Logout"}}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+  </v-navigation-drawer>
+
+    <v-snackbar
+      v-model="snackbar"
+      :bottom=true
+      :left=false
+      :multi-line=false
+      :right=true
+      :timeout="12000"
+      :top=false
+      :vertical="mode === 'vertical'"
+    >
+      Click on the sidebar to get started.
+    <v-btn
+      color="purple"
+      flat
+      @click="snackbar = false"
+    >
+      Close
+    </v-btn>
+  </v-snackbar>
+</v-layout>
 </template>
 
 <script>
@@ -85,15 +77,16 @@ import axios from 'axios'
           {Username: 'Collin'}
         ],
         items: [
-          { title: 'Account Details', icon: 'contacts' },
-          { title: 'Qualifications', icon: 'subtitles' },
-          { title: 'Map', icon: 'map' },
-          { title: 'Calendar', icon: 'event' },
-          { title: 'Chat', icon: 'chat' },
-          { title: 'Logout', icon: 'exit_to_app'}
+          { title: 'Account Details', icon: 'contacts', key: 'settings' },
+          { title: 'Qualifications', icon: 'subtitles', key: 'qualifications' },
+          { title: 'Map', icon: 'map', key: 'maps' },
+          { title: 'Calendar', icon: 'event', key: 'calendar' },
+          { title: 'Chat', icon: 'chat', key: 'chat' }// ,
+          // { title: 'Logout', icon: 'exit_to_app', key: 'logout'}
         ],
         mini: true,
-        right: null
+        right: null,
+        snackbar: true,
       }
     },
     mounted: function() {
@@ -102,18 +95,17 @@ import axios from 'axios'
       changePage(page) {
         // alert(page);
         this.$emit('newPage', page);
-        // this.$emit('rmsidebar', true);
       },
       logout() {
         var ref = this;
         axios.post('/logout', "logout").then(function(res) {
-          console.log(res.data);
-          if (res.data === 'success') {
-            ref.$emit('login', false);
-            ref.$emit('newPage', 'logout');
-          }
-        })
-      }
+        console.log(res.data);
+        if (res.data === 'success') {
+          ref.$emit('login', false);
+          ref.$emit('newPage', 'logout');
+        }
+      })
     }
   }
+}
 </script>
