@@ -105,13 +105,12 @@ import axios from 'axios'
       },
       logout() {
         var ref = this;
-
         axios.post('/logout', "logout").then(function(res) {
           console.log(res.data);
 
           if(res.data === 'success') {
             ref.$emit('login', false);
-            this.$emit('newPage', "logout");
+            ref.$emit('newPage', 'logout');
           }
         })
       }

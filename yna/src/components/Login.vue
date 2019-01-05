@@ -58,7 +58,7 @@ import axios from 'axios'
         }).then(function(res) {
           if(res.data === 'success') {
             ref.$emit('login', true);
-            this.$emit('newPage', "dashboard");
+            ref.$emit('newPage', "dashboard");
           } else {
           }
         })
