@@ -15,6 +15,7 @@ Vue.component('icon', Icon)
 
 // Vue.use(Vuetify);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.
 
 Vue.use(DaySpanVuetify, {
   methods: {
