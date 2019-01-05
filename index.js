@@ -97,7 +97,7 @@ express()
     });
   })
   .post('/getUserInfo', (req, res) => {
-    //Returns the user's information
+    // Returns the user's information
     var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
     ref.once('value').then(function(snapshot) {
       res.send({
@@ -108,7 +108,7 @@ express()
         birthday: snapshot.val().birthday,
         school: snapshot.val().school
       });
-    }).catch(function(error){
+    }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log("user data retrieval failure");
