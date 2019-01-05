@@ -115,7 +115,7 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-      alert(page);
+      //alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;
