@@ -3,8 +3,13 @@
     <v-content>
       <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
+<<<<<<< HEAD
         <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar" @login="updateStatus"/>
         <!-- <Landing v-if="page === 'home'"/> -->
+=======
+        <Sidebar @newPage="changePage" @login="updateStatus"/>
+        <Landing v-if="page === 'home'"/>
+>>>>>>> ef5a5a23698eeef510711e708fc6211c8c9d40ed
         <Dashboard v-if="page === 'dashboard'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
@@ -100,7 +105,6 @@ export default {
   data () {
     return {
       loggedIn: false,
-      rmsb: false,
       page: "home",
       email: '',
       first: '',
@@ -115,15 +119,10 @@ export default {
   methods: {
     changePage(page) {
       this.page = page;
-      // alert(page);
     },
     updateStatus(status) {
       this.loggedIn = status;
       console.log(status);
-    },
-    removeSidebar(status) {
-      this.rmsb = status;
-      // console.log(status);
     },
     getUserInfo() {
       axios.post('/getUserInfo').then(function(res){

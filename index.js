@@ -126,13 +126,10 @@ express()
         firebase.database().ref('users/' + req.body.userId).set({
           tier: req.body.newTier
         });
-
-        });
       } else {
         res.sendCode(404);
       }
-    })
-
+    });
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
