@@ -76,6 +76,7 @@ import Chat from './components/Chat'
 import Logout from './components/Logout'
 import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
+import Error from './components/Error'
 
 export default {
   name: 'App',
@@ -95,7 +96,8 @@ export default {
     Footer,
     Chat,
     Logout,
-    Dashboard
+    Dashboard,
+    Error
   },
   data () {
     return {
