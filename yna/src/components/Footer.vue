@@ -2,11 +2,12 @@
   <v-footer
     dark
     height="auto"
+
   >
     <v-card
       flat
       tile
-      class="'#4f2e86;' lighten-1 white--text text-xs-center"
+      class="purple lighten-1 white--text text-xs-center"
     >
       <v-card-text>
         <v-btn
