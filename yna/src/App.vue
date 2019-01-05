@@ -4,6 +4,7 @@
       <!-- <Navbar @newPage="changePage" @login="updateStatus"/> -->
       <template v-if="loggedIn">
         <Sidebar v-if="!rmsb" @newPage="changePage" @rmsidebar="removeSidebar" @login="updateStatus"/>
+        <Landing v-if="page === 'home'"/>
         <Dashboard v-if="page === 'dashboard'"/>
         <Settings v-else-if="page === 'settings'"/>
         <Qualifications v-else-if="page === 'qualifications'"/>
@@ -79,6 +80,7 @@ import Dashboard from './components/Dashboard'
 export default {
   name: 'App',
   components: {
+    Sidebar,
     Connect,
     Login,
     Setup,
@@ -90,7 +92,6 @@ export default {
     About,
     Home,
     Settings,
-    Sidebar,
     Footer,
     Chat,
     Logout,
@@ -98,7 +99,7 @@ export default {
   },
   data () {
     return {
-      loggedIn: false,
+      loggedIn: true,
       rmsb: false,
       page: "home",
       email: '',
