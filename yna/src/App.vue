@@ -134,6 +134,20 @@ export default {
         this.birthday = res.data.birthday;
         this.school = res.data.school;
       });
+    },
+    updateTier(userId, newTier) {
+
+      //getUserInfo();
+      //userId refers to the ID of the user that requires updating.
+
+      if (loggedIn) {
+        axios.post('/updateTier', {
+          userId: userId,
+          newTier: newTier
+        }).then(function(res) {
+          console.log(res.body);
+        })
+      }
     }
   }
 }

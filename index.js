@@ -63,7 +63,8 @@ express()
           email: req.body.email,
           phone_number: req.body.phone,
           birthday: req.body.birthday,
-          school: req.body.school
+          school: req.body.school,
+          tier: 'volunteer'
         }).then(function() {
           console.log("signup success");
           res.send("success");
@@ -115,6 +116,25 @@ express()
       console.log(errorMessage);
       res.send("error");
     });
+  })
+  .post('/updateTier', (req, res) => {
+
+    var ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+    ref.once('value').then(function(snapshot) {
+      var tier = snapshot.val().tier;
+
+      if (tier === 'admin' || tier === 'coordinator') {
+
+        firebase.database().ref('users/' + req.body.userId).set({
+          tier: req.body.newTier
+        });
+
+        });
+      } else {
+        res.sendCode(404);
+      }
+    })
+
   })
 
   .use(serveStatic(__dirname + "/yna/dist"))
