@@ -6,7 +6,7 @@
     <v-card
       flat
       tile
-      class="indigo lighten-1 white--text text-xs-center"
+      class="deep-purple darken-1 white--text text-xs-center"
     >
       <v-card-text>
         <v-btn
@@ -15,7 +15,7 @@
           class="mx-3 white--text"
           icon
         >
-          <v-icon size="24px">{{ icon }}</v-icon>
+          <v-icon size="24px">{{ icon.name }}</v-icon>
         </v-btn>
       </v-card-text>
 
@@ -40,11 +40,15 @@
   export default {
     data: () => ({
       icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
+        { name:'home',
+          link: '#'
+        },
+        { name: 'event',
+          link: '#'
+        },
+        { name: 'info',
+          link: '#'
+        }
       ]
     })
   }
