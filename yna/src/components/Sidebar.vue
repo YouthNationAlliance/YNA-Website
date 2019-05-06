@@ -101,6 +101,7 @@ import axios from 'axios'
         axios.post('/logout', "logout").then(function(res) {
         console.log(res.data);
         if (res.data === 'success') {
+          alert("Success!");
           ref.$emit('login', false);
           ref.$emit('newPage', 'logout');
         }

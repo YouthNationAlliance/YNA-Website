@@ -3,6 +3,10 @@
 <!-- About page (WIP)-->
 </template>
 
+<style>
+
+</style>
+
 <script>
     export default {
 

@@ -19,6 +19,7 @@
         <Login v-else-if="page === 'login'" @login="updateStatus" @newPage="changePage"/>
         <Setup v-else-if="page === 'setup'" @login="updateStatus"/>
         <About v-else-if="page === 'about'"/>
+        <Events v-else-if="page === 'events'"/>
         <Logout v-else-if="page === 'logout'"/>
       </template>
       <!-- <Error/> -->
@@ -102,7 +103,7 @@ export default {
   },
   data () {
     return {
-      loggedIn: true,
+      loggedIn: false,
       page: "home",
       email: '',
       first: '',
@@ -116,6 +117,7 @@ export default {
   },
   methods: {
     changePage(page) {
+      alert(page);
       this.page = page;
     },
     updateStatus(status) {
@@ -135,7 +137,7 @@ export default {
     },
     updateTier(userId, newTier) {
 
-      //getUserInfo();
+      // getUserInfo();
 
       /*
       userId refers to the ID of the user that requires updating.
